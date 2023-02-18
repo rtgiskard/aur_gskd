@@ -1,0 +1,18 @@
+# Maintainer: giskard <rtgiskard@gmail.com>
+
+pkgname=otf-comic-neue
+pkgver=2.51
+pkgrel=1
+pkgdesc="Comic Neue aspires to be the casual script choice for everyone including the typographically savvy"
+arch=('any')
+license=('custom:OFL')
+url="http://comicneue.com"
+
+source=("http://comicneue.com/comic-neue-${pkgver}.zip")
+sha256sums=('54dd998c93b8d6658b1c2d6ade9f790d10ffaa3632868dd2cfac84b405290321')
+
+package() {
+  install -D -m644 ${srcdir}/comic-neue-${pkgver}/OFL.txt "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+  install -d "${pkgdir}/usr/share/fonts/OTF"
+  install -m644 ${srcdir}/comic-neue-${pkgver}/OTF/ComicNeue/*.otf "${pkgdir}/usr/share/fonts/OTF/"
+}

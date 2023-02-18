@@ -1,0 +1,225 @@
+# Maintainer: giskard <rtgiskard@gmail.com>
+
+pkgname=(
+	'gskd-sys' 'gskd-dev' 'gskd-tool' 'gskd-serv'
+	'gskd-desk' 'gskd-i18n' 'gskd-apps' 'gskd-extra'
+	'gskd-aur' 'gskd-hw'
+)
+pkgbase=gskd
+pkgver=0.1
+pkgrel=1
+epoch=
+pkgdesc="giskard's package set"
+arch=('any')
+url=""
+license=('GPL')
+groups=('gskd-pkgs')
+
+package_gskd-sys() {
+	depends=(
+		# sel:
+		'mkinitcpio'
+
+		'linux' 'linux-firmware' 'intel-ucode'
+		'grub' 'efibootmgr' 'systemd'
+
+		'mdadm' 'lvm2' 'cryptsetup' 'gptfdisk'
+		'btrfs-progs' 'e2fsprogs' 'dosfstools' 'exfat-utils' 'ntfs-3g'
+		'nfs-utils' 'cifs-utils' 'squashfs-tools'
+
+		'bridge-utils' 'iproute2' 'nftables'
+	)
+}
+
+package_gskd-dev() {
+	depends=(
+		'gcc' 'llvm' 'gdb' 'valgrind'
+		'go' 'go-tools'
+
+		'meson' 'make' 'pkgconf' 'patch' 'patchelf'
+		'binutils' 'fakeroot' 'file' 'which'
+		'gettext' 'bison' 'flex' 'automake' 'cmake' 'debugedit'
+
+		'git' 'git-lfs'
+		'astyle' 'yapf' 'flake8'
+
+		'doctest' 'spdlog' 'hdf5-openmpi'
+		'flatbuffers' 'protobuf'
+
+		'ipython' 'python-pip'
+		'python-numpy' 'python-pandas' 'python-h5py-openmpi'
+		'python-pycryptodome' 'python-yaml'
+		'python-httpx' 'python-dbus-next'
+	)
+}
+
+package_gskd-tool() {
+	depends=(
+		'neovim' 'python-pynvim'
+		'screen' 'tree' 'the_silver_searcher' 'rhash' 'bc'
+		'bash-completion'
+
+		'sudo' 'cronie' 'thermald' 'compsize'
+		'oath-toolkit' 'libpam-google-authenticator'
+
+		'mesa-utils' 'vulkan-tools' 'vdpauinfo' 'libva-utils'
+		'dmidecode' 'usbutils' 'smartmontools'
+		'sysstat' 'lsof'
+		'iputils' 'socat' 'mtr'
+
+		'iw' 'hostapd' 'bluez-utils'
+		'curl' 'wget' 'aria2'
+		'libisoburn' 'cdrtools'
+		'qrencode' 'zbar'
+		'p7zip' 'clamav'
+		'android-tools'
+
+		'asp'
+		'rebuild-detector'
+		'pacman-contrib'
+		#'arch-install-scripts'
+
+		'man-db' 'man-pages' 'texinfo'
+		'enca' 'convmv'
+		'asciidoctor'
+	)
+}
+
+package_gskd-serv() {
+	depends=(
+		'dhcp' 'bind' 'chrony'
+
+		'wireguard-tools' 'stunnel'
+
+		'libvirt' 'qemu-base'
+		'podman' 'cni-plugins'
+
+		'openssh' 'rsync'
+		'nbd' 'open-iscsi'
+
+		'nginx' 'samba'
+		'atftp'
+	)
+}
+
+package_gskd-desk() {
+	depends=(
+		'wayland' 'wl-clipboard'
+		'pipewire' 'wireplumber' 'pipewire-jack' 'pipewire-pulse'
+
+		'foot' 'kitty'
+		'networkmanager'
+		'xdg-user-dirs'
+
+		# desktop: sway
+		#'sway' 'swaybg' 'swayidle' 'swaylock' 'waybar' 'wf-recorder'
+		#'xdg-desktop-portal-wlr'
+
+		# desktop: gnome
+		'gdm' 'gnome-keyring' 'gnome-themes-extra' 'gnome-system-monitor'
+		'gnome-calendar' 'gnome-weather' 'gnome-font-viewer'
+		'gnome-remote-desktop' 'gnome-sound-recorder' 'cheese'
+		'xdg-desktop-portal-gnome' 'gnome-shell-extensions'
+	)
+}
+
+package_gskd-i18n() {
+	depends=(
+		'gnu-free-fonts' 'ttf-inconsolata' 'ttf-dejavu' 'gsfonts'
+		'otf-font-awesome' 'noto-fonts-emoji'
+		'wqy-microhei' 'ttf-arphic-ukai' 'ttf-arphic-uming' 'opendesktop-fonts'
+
+		'fcitx5' 'fcitx5-gtk' 'fcitx5-qt' 'fcitx5-configtool'
+		'fcitx5-rime' 'rime-emoji'
+	)
+}
+
+package_gskd-apps() {
+	depends=(
+		# sel:
+		'gnu-free-fonts' 'qt6-multimedia-gstreamer'
+
+		'nautilus' 'file-roller' 'evince' 'gedit'
+		'gthumb' 'flameshot' 'easyeffects' 'obs-studio'
+		'strawberry' 'celluloid' 'foliate' 'djview'
+
+		'inkscape' 'gimp' 'mpv' 'ffmpeg'
+		'flac' 'mac' 'lame' 'opus-tools' 'vorbis-tools' 'wavpack'
+		'mkvtoolnix-gui' 'mediainfo' 'easytag'
+
+		'graphviz'
+		'glade' 'gnome-builder'
+		'virt-manager' 'remmina'
+		'wireshark-qt' 'd-spy'
+
+		'firefox' 'evolution'
+		'libreoffice-fresh' 'libreoffice-fresh-zh-cn'
+		'qbittorrent' 'keepassxc'
+	)
+}
+
+package_gskd-extra() {
+	depends=(
+		# delay
+		'texlive-science' 'texlive-latexextra' 'texlive-pictures'
+		'texlive-langchinese' 'texlive-fontsextra'
+
+		'freecad'
+		#'kicad' 'kicad-library' 'kicad-library-3d'
+		#'sagemath'
+
+		# game
+		'fceux'
+		'gnome-2048'
+	)
+}
+
+package_gskd-hw() {
+	depends=(
+		# vulkan + libva: intel
+		'vulkan-intel'
+		'libva-intel-driver'
+		'intel-gpu-tools'
+
+		# nvidia: gpu, vulkan, vdapu, libva-vdpau
+		'nvidia' 'nvidia-utils' 'nvidia-prime'
+		'libva-vdpau-driver'
+
+		# vdpau + libva: nouveau, radeonsi, virtio
+		'mesa-vdpau'
+		'libva-mesa-driver'
+
+		#'vulkan-virtio'
+	)
+}
+
+package_gskd-aur() {
+	pkgdesc="pkgs from aur"
+	depends=(
+		'paru'
+
+		'ttf-comic-mono-git'
+		'otf-comic-neue'
+		'ttf-lxgw-wenkai'
+
+		'deadbeef'
+		'deadbeef-mpris2-plugin'
+		'deadbeef-plugin-spectrogram-gtk3-git'
+		'deadbeef-plugin-musical-spectrum-gtk3-git'
+		'deadbeef-plugin-quicksearch-gtk3-git'
+
+		'flacon'
+		'podman-compose-git'
+
+		# desktop: sway
+		#'greetd' 'greetd-wlgreet-git' 'greetd-gtkgreet-git'
+
+		# desktop: gnome
+		'gnome-browser-connector'
+
+		# misc
+		'vlmcsd-git'
+	)
+}
+
+# sed note: s/\([a-zA-Z0-9_-]\+\)/'\1'/g

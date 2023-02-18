@@ -1,0 +1,36 @@
+# Maintainer: giskard <rtgiskard@gmail.com>
+
+pkgname=podman-compose-git
+pkgver=1.0.4.r157.a3588b4
+pkgrel=1
+epoch=1
+pkgdesc="A script to run docker-compose.yaml with podman"
+arch=('any')
+url="https://github.com/rtgiskard/podman-compose"
+license=('GPL2')
+depends=('podman' 'python-yaml' 'python-dotenv')
+makedepends=('git' 'python-setuptools')
+optdepends=('podman-dnsname: the containers will be able to resolve each other if they are on the same CNI network')
+provides=("${pkgname%-git}")
+conflicts=("${pkgname%-git}")
+source=("${pkgname%-git}::git+https://github.com/rtgiskard/podman-compose#branch=dev.gskd")
+sha256sums=('SKIP')
+
+pkgver() {
+  cd "$srcdir/${pkgname%-git}"
+  printf "%s.%s" \
+    "$(grep -Po "(?<=__version__ = \").*(?=\")" podman_compose.py)" \
+    "$(git describe --long | sed -e "s/^$(git describe --abbrev=0)-//" -e 's/\([^-]*-\)g/r\1/;s/-/./g')"
+}
+
+build() {
+  cd "$srcdir/${pkgname%-git}"
+  python setup.py build
+}
+
+package() {
+  cd "$srcdir/${pkgname%-git}"
+  python setup.py install --root="$pkgdir" --optimize=1 --skip-build
+}
+
+# vim: set et ts=2 sw=2:
