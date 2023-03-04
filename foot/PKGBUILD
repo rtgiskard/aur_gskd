@@ -19,6 +19,7 @@ makedepends=(fcft
              ninja
              pixman
              python
+             scdoc
              tllist
              wayland
              wayland-protocols)
