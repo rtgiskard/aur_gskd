@@ -1,0 +1,58 @@
+# Maintainer: giskard <rtgiskard@gmail.com>
+
+_pkgname=headscale
+pkgname="${_pkgname}-git"
+pkgver=0.21.0.r0.g248abcf
+pkgrel=1
+pkgdesc="An open source, self-hosted implementation of the Tailscale coordination server."
+arch=('x86_64')
+url="https://github.com/juanfont/headscale"
+license=('BSD')
+depends=()
+makedepends=('git' 'go')
+optdepends=(
+	'wireguard-tools: CLI tools for generating keys'
+	'sqlite: default databse provider'
+	'postgresql: alternative database provider'
+	'tailscale: the client'
+)
+provides=("${_pkgname}")
+conflicts=("${_pkgname}")
+source=(
+	"${_pkgname}::git+https://github.com/juanfont/headscale.git"
+	'headscale.service'
+	'headscale.sysusers'
+	'headscale.tmpfiles'
+)
+sha256sums=('SKIP'
+            'e3d6d4e6f8573453f12b46ee972565ab47e5aaed78935e8c32913c5159d67de5'
+            'bc798d97691ec660e45f40a10c92b7283e56a33c312a93a0ffe02337f0feec10'
+            '9b641d9ebf33e892f219ca116671a32cf2176a244b7a6c23c2af128dfcb0253e')
+
+pkgver() {
+	cd "${srcdir}/${_pkgname}"
+	git describe --long --tags | sed 's/\([^-]*-g\)/r\1/;s/-/./g;s/^v//'
+}
+
+build() {
+	cd "${srcdir}/${_pkgname}"
+	GOOS=linux CGO_ENABLED=0 go build \
+		-trimpath -buildmode=pie -tags ts2019 \
+		-ldflags="-s -w -X github.com/juanfont/headscale/cmd/headscale/cli.Version=$pkgver" \
+		-a ./cmd/headscale
+}
+
+package() {
+	cd "$srcdir/${_pkgname}"
+	install -Dm755 "${srcdir}/${_pkgname}/${_pkgname}" "${pkgdir}/usr/bin/${_pkgname}"
+	install -Dm644 "${srcdir}/${_pkgname}/config-example.yaml" "${pkgdir}/etc/${_pkgname}/config-example.yaml"
+	install -Dm644 "${srcdir}/${_pkgname}/config-example.yaml" "${pkgdir}/etc/${_pkgname}/config.yaml"
+	install -Dm644 "${srcdir}/${_pkgname}/derp-example.yaml" "${pkgdir}/etc/${_pkgname}/derp.yaml"
+	install -Dm644 "${srcdir}/${_pkgname}/LICENSE" "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+
+	install -Dm644 "${srcdir}/headscale.service" "${pkgdir}/etc/systemd/system/${_pkgname}.service"
+    install -Dm644 "${srcdir}/headscale.sysusers" "${pkgdir}/usr/lib/sysusers.d/${_pkgname}.conf"
+    install -Dm644 "${srcdir}/headscale.tmpfiles" "${pkgdir}/usr/lib/tmpfiles.d/${_pkgname}.conf"
+
+	install -dm755 "${pkgdir}/var/lib/${_pkgname}"
+}
