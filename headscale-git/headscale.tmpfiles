@@ -1,3 +1,2 @@
 d /etc/headscale 0755 headscale headscale -
 d /var/lib/headscale 0755 headscale headscale -
-d /run/headscale 0755 headscale headscale -

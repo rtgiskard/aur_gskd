@@ -25,9 +25,9 @@ source=(
 	'headscale.tmpfiles'
 )
 sha256sums=('SKIP'
-            'e3d6d4e6f8573453f12b46ee972565ab47e5aaed78935e8c32913c5159d67de5'
+            '7fff615806605cda9954b760a1466367a4603a9072139c221fdc98908e3ec006'
             'bc798d97691ec660e45f40a10c92b7283e56a33c312a93a0ffe02337f0feec10'
-            '9b641d9ebf33e892f219ca116671a32cf2176a244b7a6c23c2af128dfcb0253e')
+            '2f3c7e8b8161698404edf52a56f55e7472d483b8739eb8cda1885c9bacc6f1a6')
 
 pkgver() {
 	cd "${srcdir}/${_pkgname}"
@@ -40,15 +40,19 @@ build() {
 		-trimpath -buildmode=pie -tags ts2019 \
 		-ldflags="-s -w -X github.com/juanfont/headscale/cmd/headscale/cli.Version=$pkgver" \
 		-a ./cmd/headscale
+
+	# generate bash completion config
+	./${_pkgname} completion bash > headscale.completion
 }
 
 package() {
 	cd "$srcdir/${_pkgname}"
-	install -Dm755 "${srcdir}/${_pkgname}/${_pkgname}" "${pkgdir}/usr/bin/${_pkgname}"
-	install -Dm644 "${srcdir}/${_pkgname}/config-example.yaml" "${pkgdir}/etc/${_pkgname}/config-example.yaml"
-	install -Dm644 "${srcdir}/${_pkgname}/config-example.yaml" "${pkgdir}/etc/${_pkgname}/config.yaml"
-	install -Dm644 "${srcdir}/${_pkgname}/derp-example.yaml" "${pkgdir}/etc/${_pkgname}/derp.yaml"
-	install -Dm644 "${srcdir}/${_pkgname}/LICENSE" "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+	install -Dm755 "${_pkgname}" "${pkgdir}/usr/bin/${_pkgname}"
+	install -Dm644 "headscale.completion" "${pkgdir}/usr/share/bash-completion/completions/${_pkgname}"
+	install -Dm644 "config-example.yaml" "${pkgdir}/etc/${_pkgname}/config-example.yaml"
+	install -Dm644 "config-example.yaml" "${pkgdir}/etc/${_pkgname}/config.yaml"
+	install -Dm644 "derp-example.yaml" "${pkgdir}/etc/${_pkgname}/derp.yaml"
+	install -Dm644 "LICENSE" "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
 
 	install -Dm644 "${srcdir}/headscale.service" "${pkgdir}/etc/systemd/system/${_pkgname}.service"
     install -Dm644 "${srcdir}/headscale.sysusers" "${pkgdir}/usr/lib/sysusers.d/${_pkgname}.conf"
