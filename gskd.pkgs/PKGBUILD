@@ -7,7 +7,7 @@ pkgname=(
 )
 pkgbase=gskd
 pkgver=0.1
-pkgrel=1
+pkgrel=2
 epoch=
 pkgdesc="giskard's package set"
 arch=('any')
@@ -20,7 +20,7 @@ package_gskd-sys() {
 		# sel:
 		'mkinitcpio'
 
-		'linux' 'linux-firmware' 'intel-ucode'
+		'linux' 'linux-firmware'
 		'grub' 'efibootmgr' 'systemd'
 
 		'mdadm' 'lvm2' 'cryptsetup' 'gptfdisk'
@@ -41,22 +41,26 @@ package_gskd-dev() {
 		'gettext' 'bison' 'flex' 'automake' 'cmake' 'debugedit'
 
 		'git' 'git-lfs'
-		'astyle' 'yapf' 'flake8'
+		'astyle' 'yapf' 'flake8' 'stylua' 'shfmt'
 
 		'doctest' 'spdlog' 'hdf5-openmpi'
 		'flatbuffers' 'protobuf'
+		'go-swagger'
 
-		'ipython' 'python-pip'
+		'ipython' 'python-pip' 'python-poetry' 'python-pytest'
 		'python-numpy' 'python-pandas' 'python-h5py-openmpi'
 		'python-pycryptodome' 'python-yaml'
 		'python-httpx' 'python-dbus-next'
+		'python-python-socks' 'python-socksio' 'python-pysocks'
+
+		'nodejs' 'yarn'
 	)
 }
 
 package_gskd-tool() {
 	depends=(
 		'neovim' 'python-pynvim'
-		'screen' 'tree' 'the_silver_searcher' 'rhash' 'bc'
+		'screen' 'tree' 'ripgrep' 'fd' 'rhash' 'bc'
 		'bash-completion'
 
 		'sudo' 'cronie' 'thermald' 'compsize'
@@ -64,7 +68,7 @@ package_gskd-tool() {
 
 		'mesa-utils' 'vulkan-tools' 'vdpauinfo' 'libva-utils'
 		'dmidecode' 'usbutils' 'smartmontools'
-		'sysstat' 'lsof'
+		'sysstat' 'lsof' 'xorg-xauth'
 		'iputils' 'socat' 'mtr'
 
 		'iw' 'hostapd' 'bluez-utils'
@@ -91,7 +95,7 @@ package_gskd-serv() {
 
 		'wireguard-tools' 'stunnel'
 
-		'libvirt' 'qemu-base'
+		'libvirt' 'qemu-base' 'qemu-user-static-binfmt'
 		'podman' 'cni-plugins'
 
 		'openssh' 'rsync'
@@ -116,10 +120,11 @@ package_gskd-desk() {
 		#'xdg-desktop-portal-wlr'
 
 		# desktop: gnome
-		'gdm' 'gnome-keyring' 'gnome-themes-extra' 'gnome-system-monitor'
+		'gdm' 'gnome-keyring' 'gnome-control-center' 'gnome-themes-extra'
+		'gnome-shell-extensions' 'gnome-system-monitor' 'seahorse'
 		'gnome-calendar' 'gnome-weather' 'gnome-font-viewer'
 		'gnome-remote-desktop' 'gnome-sound-recorder' 'cheese'
-		'xdg-desktop-portal-gnome' 'gnome-shell-extensions'
+		'xdg-desktop-portal-gnome'
 	)
 }
 
@@ -176,6 +181,9 @@ package_gskd-extra() {
 
 package_gskd-hw() {
 	depends=(
+		# cpu microcode
+		'intel-ucode'
+
 		# vulkan + libva: intel
 		'vulkan-intel'
 		'libva-intel-driver'
@@ -210,6 +218,9 @@ package_gskd-aur() {
 
 		'flacon'
 		'podman-compose-git'
+
+		'clash-meta'
+		'headscale-git' 'tailscale-git'
 
 		# desktop: sway
 		#'greetd' 'greetd-wlgreet-git' 'greetd-gtkgreet-git'
