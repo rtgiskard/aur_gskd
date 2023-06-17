@@ -35,13 +35,14 @@ package_gskd-dev() {
 	depends=(
 		'gcc' 'llvm' 'gdb' 'valgrind'
 		'go' 'go-tools'
+		'rust'
 
 		'meson' 'make' 'pkgconf' 'patch' 'patchelf'
 		'binutils' 'fakeroot' 'file' 'which'
 		'gettext' 'bison' 'flex' 'automake' 'cmake' 'debugedit'
 
 		'git' 'git-lfs'
-		'astyle' 'yapf' 'flake8' 'stylua' 'shfmt'
+		'astyle' 'yapf' 'ruff' 'stylua' 'shfmt'
 
 		'doctest' 'spdlog' 'hdf5-openmpi'
 		'flatbuffers' 'protobuf'
@@ -68,7 +69,7 @@ package_gskd-tool() {
 
 		'mesa-utils' 'vulkan-tools' 'vdpauinfo' 'libva-utils'
 		'dmidecode' 'usbutils' 'smartmontools'
-		'sysstat' 'lsof' 'xorg-xauth'
+		'sysstat' 'procps-ng' 'lsof' 'xorg-xauth'
 		'iputils' 'socat' 'mtr'
 
 		'iw' 'hostapd' 'bluez-utils'
@@ -133,6 +134,7 @@ package_gskd-i18n() {
 		'gnu-free-fonts' 'ttf-inconsolata' 'ttf-dejavu' 'gsfonts'
 		'otf-font-awesome' 'noto-fonts-emoji'
 		'wqy-microhei' 'ttf-arphic-ukai' 'ttf-arphic-uming' 'opendesktop-fonts'
+		'ttf-nerd-fonts-symbols' 'ttf-nerd-fonts-symbols-mono'
 
 		'fcitx5' 'fcitx5-gtk' 'fcitx5-qt' 'fcitx5-configtool'
 		'fcitx5-rime' 'rime-emoji'
@@ -179,7 +181,26 @@ package_gskd-extra() {
 	)
 }
 
-package_gskd-hw() {
+package_gskd-hw() {  # gtr7
+	depends=(
+		# cpu microcode
+		'amd-ucode'
+
+		# vulkan + libva: radeon
+		'vulkan-radeon'
+
+		# vdpau + libva: nouveau, radeonsi, virtio
+		'mesa-vdpau'
+		'libva-mesa-driver'
+
+		#'vulkan-virtio'
+
+		# tools
+		# aur: amdgpu_top
+	)
+}
+
+package_gskd-hw-F57() {
 	depends=(
 		# cpu microcode
 		'intel-ucode'
@@ -229,6 +250,7 @@ package_gskd-aur() {
 		'gnome-browser-connector'
 
 		# misc
+		'amdgpu_top-git'
 		'vlmcsd-git'
 	)
 }
