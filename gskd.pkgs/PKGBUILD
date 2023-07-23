@@ -38,20 +38,21 @@ package_gskd-dev() {
 		'rust'
 
 		'meson' 'make' 'pkgconf' 'patch' 'patchelf'
-		'binutils' 'fakeroot' 'file' 'which'
+		'binutils' 'pahole' 'fakeroot' 'file' 'which'
 		'gettext' 'bison' 'flex' 'automake' 'cmake' 'debugedit'
 
 		'git' 'git-lfs'
 		'astyle' 'yapf' 'ruff' 'stylua' 'shfmt'
+		'uncrustify' 'prettier'
 
 		'doctest' 'spdlog' 'hdf5-openmpi'
 		'flatbuffers' 'protobuf'
-		'go-swagger'
+		'go-swagger' 'ali'
 
 		'ipython' 'python-pip' 'python-poetry' 'python-pytest'
 		'python-numpy' 'python-pandas' 'python-h5py-openmpi'
-		'python-pycryptodome' 'python-yaml'
-		'python-httpx' 'python-dbus-next'
+		'python-pycryptodome' 'python-yaml' 'python-uvloop'
+		'python-httpx' 'python-dbus-next' 'python-fastapi'
 		'python-python-socks' 'python-socksio' 'python-pysocks'
 
 		'nodejs' 'yarn'
@@ -68,7 +69,7 @@ package_gskd-tool() {
 		'oath-toolkit' 'libpam-google-authenticator'
 
 		'mesa-utils' 'vulkan-tools' 'vdpauinfo' 'libva-utils'
-		'dmidecode' 'usbutils' 'smartmontools'
+		'dmidecode' 'usbutils' 'smartmontools' 'nvme-cli'
 		'sysstat' 'procps-ng' 'lsof' 'xorg-xauth'
 		'iputils' 'socat' 'mtr'
 
@@ -168,7 +169,7 @@ package_gskd-apps() {
 package_gskd-extra() {
 	depends=(
 		# delay
-		'texlive-science' 'texlive-latexextra' 'texlive-pictures'
+		'texlive-mathscience' 'texlive-latexextra' 'texlive-pictures'
 		'texlive-langchinese' 'texlive-fontsextra'
 
 		'freecad'
@@ -247,7 +248,7 @@ package_gskd-aur() {
 		#'greetd' 'greetd-wlgreet-git' 'greetd-gtkgreet-git'
 
 		# desktop: gnome
-		'gnome-browser-connector'
+		'gnome-browser-connector-git'
 
 		# misc
 		'amdgpu_top-git'
