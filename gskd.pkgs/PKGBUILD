@@ -7,7 +7,7 @@ pkgname=(
 )
 pkgbase=gskd
 pkgver=0.1
-pkgrel=2
+pkgrel=4
 epoch=
 pkgdesc="giskard's package set"
 arch=('any')
@@ -155,7 +155,7 @@ package_gskd-apps() {
 		'flac' 'mac' 'lame' 'opus-tools' 'vorbis-tools' 'wavpack'
 		'mkvtoolnix-gui' 'mediainfo' 'easytag'
 
-		'graphviz'
+		'graphviz' 'fontforge'
 		'glade' 'gnome-builder'
 		'virt-manager' 'remmina'
 		'wireshark-qt' 'd-spy'
