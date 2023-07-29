@@ -228,7 +228,7 @@ package_gskd-aur() {
 	depends=(
 		'paru'
 
-		'ttf-comic-mono-git'
+		'otf-comic-shanns-mono'
 		'otf-comic-neue'
 		'ttf-lxgw-wenkai'
 

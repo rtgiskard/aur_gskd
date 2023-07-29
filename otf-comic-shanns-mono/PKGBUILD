@@ -1,0 +1,19 @@
+# Maintainer: Dorian Bourgeoisat <dorian dot bourgeoisat at icloud dot com>
+
+pkgname=otf-comic-shanns-mono
+pkgver=1.3.0
+pkgrel=1
+pkgdesc="a monospaced comic font based on Comic Shanns"
+license=('MIT')
+arch=('any')
+url="https://github.com/jesusmgg/comic-shanns-mono"
+provides=("comic-mono")
+
+source=("https://github.com/jesusmgg/comic-shanns-mono/releases/download/v$pkgver/comic-shanns-mono-v$pkgver.zip")
+b2sums=('ab1983953c572acf2ccca70a2b6e86db5480db8cb34c4190d9363a6702267f4fdd2dbb5669941a7fce85f1d0e97f9fd1dc1a93d2d3b51cb959d8bff03453761d')
+
+
+package() {
+	install -Dm644 'ComicShannsMono-Regular.otf' -t "${pkgdir}/usr/share/fonts/OTF/"
+	install -Dm644 'LICENSE.md' "${pkgdir}/usr/share/licenses/${pkgname%-*}/LICENSE"
+}
