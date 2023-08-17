@@ -1,0 +1,49 @@
+# Maintainer: giskard <rtgiskard@gmail.com>
+
+_pkgname=dave
+pkgname="${_pkgname}-git"
+pkgver=0.4.0.r44.gb190d58
+pkgrel=1
+pkgdesc="A totally simple and very easy to configure stand alone webdav server"
+arch=('x86_64')
+url="https://github.com/micromata/dave"
+license=('Apache')
+depends=()
+makedepends=('git' 'go')
+provides=("${_pkgname}")
+conflicts=("${_pkgname}")
+source=(
+	"${_pkgname}::git+https://github.com/micromata/dave.git"
+	"${_pkgname}.service"
+)
+sha256sums=('SKIP'
+            '9d1f9a6371aa295186eaed5289418b8e58610ceaf6c96a95899260437f449783')
+
+pkgver() {
+	cd "${srcdir}/${_pkgname}"
+	git describe --long --tags | sed 's/\([^-]*-g\)/r\1/;s/-/./g;s/^v//'
+}
+
+build() {
+	cd "${srcdir}/${_pkgname}"
+	for target in dave davecli; do
+		GOOS=linux CGO_ENABLED=0 go build \
+			-trimpath -buildmode=pie -a \
+			-o $target cmd/$target/main.go
+	done
+}
+
+package() {
+	cd "$srcdir/${_pkgname}"
+	for target in dave davecli; do
+		install -Dm755 -t "${pkgdir}/usr/bin/" "$target"
+	done
+
+	davecli completion bash > ${_pkgname}.completion
+	install -Dm644 "${_pkgname}.completion" "${pkgdir}/usr/share/bash-completion/completions/${_pkgname}"
+
+	install -Dm644 "LICENSE.txt" "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+
+	install -Dm644 -t "${pkgdir}/etc/${_pkgname}/" "examples/config-sample.yaml"
+	install -Dm644 -t "${pkgdir}/usr/lib/systemd/system/" "${srcdir}/${_pkgname}.service"
+}
