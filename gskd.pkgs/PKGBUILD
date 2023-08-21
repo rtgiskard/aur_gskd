@@ -45,7 +45,7 @@ package_gskd-dev() {
 		'astyle' 'yapf' 'ruff' 'stylua' 'shfmt'
 		'uncrustify' 'prettier'
 
-		'doctest' 'spdlog' 'hdf5-openmpi'
+		#'doctest' 'spdlog' 'hdf5-openmpi'
 		'flatbuffers' 'protobuf'
 		'go-swagger' 'ali'
 
