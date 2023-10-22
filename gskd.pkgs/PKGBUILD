@@ -101,10 +101,13 @@ package_gskd-serv() {
 		'podman' 'cni-plugins'
 
 		'openssh' 'rsync'
-		'nbd' 'open-iscsi'
+		'nbd'
+		#'open-iscsi'
 
-		'nginx' 'samba'
-		'atftp'
+		'nginx'
+		#'samba' 'atftp'
+
+		'headscale' 'tailscale'
 	)
 }
 
@@ -242,7 +245,7 @@ package_gskd-aur() {
 		'podman-compose-git'
 
 		'clash-meta'
-		'headscale-git' 'tailscale-git'
+		#'headscale-git' 'tailscale-git'
 
 		# desktop: sway
 		#'greetd' 'greetd-wlgreet-git' 'greetd-gtkgreet-git'
