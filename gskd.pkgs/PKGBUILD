@@ -62,7 +62,7 @@ package_gskd-dev() {
 package_gskd-tool() {
 	depends=(
 		'neovim' 'python-pynvim'
-		'screen' 'tree' 'ripgrep' 'fd' 'rhash' 'bc'
+		'tmux' 'tree' 'ripgrep' 'fd' 'rhash' 'bc'
 		'bash-completion'
 
 		'sudo' 'cronie' 'thermald' 'compsize'
