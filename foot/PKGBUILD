@@ -4,8 +4,8 @@
 pkgbase=foot
 pkgdesc='Fast, lightweight, and minimalistic Wayland terminal emulator'
 pkgname=($pkgbase $pkgbase-terminfo)
-pkgver=1.15.1
-pkgrel=4
+pkgver=1.16.2
+pkgrel=2
 url="https://codeberg.org/dnkl/$pkgbase"
 arch=(x86_64)
 license=(MIT)
