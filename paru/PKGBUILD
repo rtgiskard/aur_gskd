@@ -2,7 +2,7 @@
 
 pkgname=paru
 pkgver=1.11.2
-pkgrel=1
+pkgrel=2
 pkgdesc='Feature packed AUR helper'
 url='https://github.com/morganamilo/paru'
 backup=("etc/paru.conf")
@@ -12,11 +12,11 @@ makedepends=('cargo')
 depends=('git' 'pacman')
 optdepends=('asp: downloading repo pkgbuilds' 'bat: colored pkgbuild printing' 'devtools: build in chroot')
 
-source=("$pkgname-$pkgver.tar.gz::https://github.com/Morganamilo/paru/archive/v$pkgver.tar.gz")
-sha256sums=('9fd8db52894f9e7d61a3901d2c441502aab28a090083e0d6fdb58118e53a8a14')
+source=("$pkgname::git+https://github.com/Morganamilo/paru.git")
+sha256sums=('SKIP')
 
 build () {
-  cd "$srcdir/$pkgname-$pkgver"
+  cd "$srcdir/$pkgname"
 
   if pacman -T pacman-git > /dev/null; then
     _features+="git,"
