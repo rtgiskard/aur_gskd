@@ -33,7 +33,7 @@ package_gskd-sys() {
 
 package_gskd-dev() {
 	depends=(
-		'gcc' 'llvm' 'gdb' 'valgrind'
+		'gcc' 'llvm' 'gdb' 'lldb' 'valgrind'
 		'go' 'go-tools'
 		'rust'
 
@@ -54,6 +54,7 @@ package_gskd-dev() {
 		'python-pycryptodome' 'python-yaml' 'python-uvloop'
 		'python-httpx' 'python-dbus-next' 'python-fastapi'
 		'python-python-socks' 'python-socksio' 'python-pysocks'
+		'python-debugpy'
 
 		'nodejs' 'yarn'
 	)
@@ -62,7 +63,8 @@ package_gskd-dev() {
 package_gskd-tool() {
 	depends=(
 		'neovim' 'python-pynvim'
-		'tmux' 'tree' 'ripgrep' 'fd' 'rhash' 'bc'
+		'tree' 'ripgrep' 'fd' 'fzf' 'rhash'
+		'bc' 'tmux'
 		'bash-completion'
 
 		'sudo' 'cronie' 'thermald' 'compsize'
