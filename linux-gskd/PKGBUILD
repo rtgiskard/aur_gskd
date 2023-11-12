@@ -1,7 +1,8 @@
 # Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
 
 pkgbase=linux-gskd
-pkgver=6.6.1.arch1
+refver=6.6.1.arch1
+pkgver=${refver%.*}
 pkgrel=1
 pkgdesc='Linux'
 url='https://github.com/archlinux/linux'
@@ -25,10 +26,10 @@ makedepends=(
   #texlive-latexextra
 )
 options=('!strip')
-_srcname=linux-${pkgver%.*}
-_srctag=v${pkgver%.*}-${pkgver##*.}
+_srcname=linux-${refver%.*}
+_srctag=v${refver%.*}-${refver##*.}
 source=(
-  https://cdn.kernel.org/pub/linux/kernel/v${pkgver%%.*}.x/${_srcname}.tar.{xz,sign}
+  https://cdn.kernel.org/pub/linux/kernel/v${refver%%.*}.x/${_srcname}.tar.{xz,sign}
   $url/releases/download/$_srctag/linux-$_srctag.patch.zst{,.sig}
   config  # the main kernel config file
 )
@@ -55,10 +56,6 @@ export KCPPFLAGS=" -march=native -mtune=native"
 prepare() {
   cd $_srcname
 
-  echo "Setting version..."
-  echo "-$pkgrel" > localversion.10-pkgrel
-  echo "${pkgbase#linux}" > localversion.20-pkgname
-
   local src
   for src in "${source[@]}"; do
     src="${src%%::*}"
@@ -69,13 +66,13 @@ prepare() {
     patch -Np1 < "../$src"
   done
 
+  # revert EXTRAVERSION
+  sed -i 's/^\(EXTRAVERSION =\) -arch[0-9]\+$/\1/' Makefile
+
   echo "Setting config..."
   cp ../config .config
   make olddefconfig
   ./scripts/diffconfig ../config .config
-
-  make -s kernelrelease > version
-  echo "Prepared $pkgbase version $(<version)"
 }
 
 build() {
@@ -104,8 +101,10 @@ _package() {
     wireguard-arch
   )
 
+  modulesdir="$pkgdir/usr/lib/modules/${pkgver}"
+  builddir="${modulesdir}/build"
+
   cd $_srcname
-  local modulesdir="$pkgdir/usr/lib/modules/$(<version)"
 
   echo "Installing boot image..."
   # systemd expects to find the kernel here to allow hibernation
@@ -120,7 +119,7 @@ _package() {
     DEPMOD=/doesnt/exist modules_install  # Suppress depmod
 
   # remove build link
-  rm "$modulesdir"/build
+  rm "$builddir"
 }
 
 _package-headers() {
@@ -128,11 +127,9 @@ _package-headers() {
   depends=(pahole)
 
   cd $_srcname
-  local builddir="$pkgdir/usr/lib/modules/$(<version)/build"
 
   echo "Installing build files..."
-  install -Dt "$builddir" -m644 .config Makefile Module.symvers System.map \
-    localversion.* version vmlinux
+  install -Dt "$builddir" -m644 .config Makefile Module.symvers System.map vmlinux
   install -Dt "$builddir/kernel" -m644 kernel/Makefile
   install -Dt "$builddir/arch/x86" -m644 arch/x86/Makefile
   cp -t "$builddir" -a scripts
@@ -209,7 +206,6 @@ _package-docs() {
   pkgdesc="Documentation for the $pkgdesc kernel"
 
   cd $_srcname
-  local builddir="$pkgdir/usr/lib/modules/$(<version)/build"
 
   echo "Installing documentation..."
   local src dst
