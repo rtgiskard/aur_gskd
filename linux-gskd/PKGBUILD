@@ -43,7 +43,7 @@ b2sums=('3bb35ba0386b00aa76dfd073e87b0d5a319d3116a80c39b11a3acd1219bc7d8b3809c1d
         'SKIP'
         'fda390a1633ea51e00b9d6ab4b89ca2e9ef472261e12e6e0d978d42678449150c384d2be1e9d9655704ffc2ad2f34b6e6dcf0b5862f1419d805e6c67e3e67bb3'
         'SKIP'
-        '7ecfa8f70b8b128801f999302adc5d1a89770985da3491caf371c6faad3f0b755ecdb3848c2d579440bf88f7c9525c6d2c64de6710ed075896fc27679e8dde2c')
+        '546bfb042783d16ff72dc94488264d604e0319e770556a2a690c8eea0d975f3c99dd1cd3478c22273ae68e39970f94310b8620159a0143c09e4a0789cf6bdd0a')
 
 export KBUILD_BUILD_HOST=archlinux
 export KBUILD_BUILD_USER=$pkgbase
@@ -101,8 +101,8 @@ _package() {
     wireguard-arch
   )
 
-  modulesdir="$pkgdir/usr/lib/modules/${pkgver}"
-  builddir="${modulesdir}/build"
+  local modulesdir="$pkgdir/usr/lib/modules/${pkgver}"
+  local builddir="$pkgdir/usr/lib/modules/${pkgver}/build"
 
   cd $_srcname
 
@@ -125,6 +125,8 @@ _package() {
 _package-headers() {
   pkgdesc="Headers and scripts for building modules for the $pkgdesc kernel"
   depends=(pahole)
+
+  local builddir="$pkgdir/usr/lib/modules/${pkgver}/build"
 
   cd $_srcname
 
@@ -204,6 +206,8 @@ _package-headers() {
 
 _package-docs() {
   pkgdesc="Documentation for the $pkgdesc kernel"
+
+  local builddir="$pkgdir/usr/lib/modules/${pkgver}/build"
 
   cd $_srcname
 
