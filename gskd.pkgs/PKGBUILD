@@ -20,7 +20,8 @@ package_gskd-sys() {
 		# sel:
 		'mkinitcpio'
 
-		'linux' 'linux-firmware'
+		'linux-gskd' #'linux'
+		'linux-firmware'
 		'grub' 'efibootmgr' 'systemd'
 
 		'mdadm' 'lvm2' 'cryptsetup' 'gptfdisk'
@@ -82,7 +83,6 @@ package_gskd-tool() {
 		'p7zip' 'clamav'
 		'android-tools'
 
-		'asp'
 		'rebuild-detector'
 		'pacman-contrib'
 		#'arch-install-scripts'
@@ -118,7 +118,7 @@ package_gskd-desk() {
 		'wayland' 'wl-clipboard'
 		'pipewire' 'wireplumber' 'pipewire-jack' 'pipewire-pulse'
 
-		'foot' 'kitty'
+		'foot' #'kitty'
 		'networkmanager'
 		'xdg-user-dirs'
 
