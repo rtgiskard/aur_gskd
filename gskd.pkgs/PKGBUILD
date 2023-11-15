@@ -175,7 +175,7 @@ package_gskd-extra() {
 	depends=(
 		# delay
 		'texlive-mathscience' 'texlive-latexextra' 'texlive-pictures'
-		'texlive-langchinese' 'texlive-fontsextra'
+		'texlive-langchinese' 'texlive-fontsextra' 'texlive-plaingeneric'
 
 		'freecad'
 		#'kicad' 'kicad-library' 'kicad-library-3d'
