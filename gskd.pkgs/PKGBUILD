@@ -42,7 +42,7 @@ package_gskd-dev() {
 		'binutils' 'pahole' 'fakeroot' 'file' 'which'
 		'gettext' 'bison' 'flex' 'automake' 'cmake' 'debugedit'
 
-		'git' 'git-lfs'
+		'git' 'git-lfs' 'd2'
 		'astyle' 'yapf' 'ruff' 'stylua' 'shfmt'
 		'uncrustify' 'prettier'
 
