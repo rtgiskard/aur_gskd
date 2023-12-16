@@ -182,7 +182,7 @@ package_gskd-extra() {
 		#'sagemath'
 
 		# game
-		'fceux'
+		#'fceux' 'yuzu'
 		'gnome-2048'
 	)
 }
@@ -247,7 +247,6 @@ package_gskd-aur() {
 		'podman-compose-git'
 
 		'clash-meta'
-		#'headscale-git' 'tailscale-git'
 
 		# desktop: sway
 		#'greetd' 'greetd-wlgreet-git' 'greetd-gtkgreet-git'
