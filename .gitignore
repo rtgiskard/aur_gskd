@@ -1,4 +1,9 @@
-*.tar.gz
-*.tar.zst
+pkg/
+src/
+
+*.tar.*
+*.zst
 *.zip
 *.7z
+*.sig
+*.sign
