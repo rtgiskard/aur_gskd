@@ -110,6 +110,7 @@ package_gskd-serv() {
 		#'samba' 'atftp'
 
 		'headscale' 'tailscale'
+		'zerotier-one'
 	)
 }
 
