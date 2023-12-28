@@ -20,7 +20,7 @@ package_gskd-sys() {
 		# sel:
 		'mkinitcpio'
 
-		'linux-gskd' #'linux'
+		'linux-gskd' 'linux-gskd-headers' #'linux'
 		'linux-firmware'
 		'grub' 'efibootmgr' 'systemd'
 
@@ -82,6 +82,9 @@ package_gskd-tool() {
 		'qrencode' 'zbar'
 		'p7zip' 'clamav'
 		'android-tools'
+
+		'v4l2loopback-dkms'
+		'v4l2loopback-utils'
 
 		'rebuild-detector'
 		'pacman-contrib'
@@ -188,7 +191,7 @@ package_gskd-extra() {
 	)
 }
 
-package_gskd-hw() {  # gtr7
+package_gskd-hw() { # gtr7
 	depends=(
 		# cpu microcode
 		'amd-ucode'
