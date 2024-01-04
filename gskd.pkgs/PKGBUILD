@@ -142,7 +142,7 @@ package_gskd-desk() {
 package_gskd-i18n() {
 	depends=(
 		'gnu-free-fonts' 'ttf-inconsolata' 'ttf-dejavu' 'gsfonts'
-		'otf-font-awesome' 'noto-fonts-emoji'
+		'otf-monaspace' 'otf-font-awesome' 'noto-fonts-emoji'
 		'wqy-microhei' 'ttf-arphic-ukai' 'ttf-arphic-uming' 'opendesktop-fonts'
 		'ttf-nerd-fonts-symbols' 'ttf-nerd-fonts-symbols-mono'
 
