@@ -180,6 +180,7 @@ package_gskd-extra() {
 		# delay
 		'texlive-mathscience' 'texlive-latexextra' 'texlive-pictures'
 		'texlive-langchinese' 'texlive-fontsextra' 'texlive-plaingeneric'
+		'texlive-latexrecommended' 'texlive-binextra'
 
 		'freecad'
 		#'kicad' 'kicad-library' 'kicad-library-3d'
