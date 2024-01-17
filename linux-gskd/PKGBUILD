@@ -5,7 +5,7 @@
 # - checksum: updpkgsums
 
 pkgbase=linux-gskd
-refver=6.6.7.arch1
+refver=6.7.arch3
 pkgver=${refver%.*}
 pkgrel=1
 pkgdesc='Linux'
@@ -32,7 +32,6 @@ makedepends=(
 options=('!strip')
 _srcname=linux-${refver%.*}
 _srctag=v${refver%.*}-${refver##*.}
-_modver=${refver%.*}-${pkgbase#*-}
 source=(
   https://cdn.kernel.org/pub/linux/kernel/v${refver%%.*}.x/${_srcname}.tar.{xz,sign}
   $url/releases/download/$_srctag/linux-$_srctag.patch.zst{,.sig}
@@ -41,11 +40,11 @@ source=(
 validpgpkeys=(
   ABAF11C65A2970B130ABE3C479BE3E4300411886  # Linus Torvalds
   647F28654894E3BD457199BE38DBBDC86092693E  # Greg Kroah-Hartman
-  A2FF3A36AAA56654109064AB19802F8B0D70FC30  # Jan Alexander Steffens (heftig)
+  83BC8889351B5DEBBB68416EB8AC08600F108CDF  # Jan Alexander Steffens (heftig)
 )
-b2sums=('000c45693d074c79816ea61c8e46b58281eed5532903df92c466d3f062ec6a302e59c2782235b21d309976929659e581ff08c8d5b067bb02e7f0cc4e40593643'
+b2sums=('cecdbd19905e43e485ab73b352ced18b37f2a138c97a6956cadcda5d3d271001117dc1cf896b166ff019fc7f405f9539e2ed0d6112b0890efb04d182adf4fd0e'
         'SKIP'
-        'fab4ae925994ac2e7d16c00021e572b980ff55eae4083a1a71754101f84a6e5943e53e22a75cfdd6ba4f6c6a5b3bc3298dc8ee20cd8653dd4fa6951576545972'
+        'a9c86a40cdd55a375a233805d412395de2855a21f8658a22a295f0176d4d97b56e504c3496ad0a7f71d27fa2eaf82594db23a18cfe3af875d29c678275cd1732'
         'SKIP'
         'ebe7424155919ecf5160f2ce83ea01777db675dd328d1053241987e56c304acdd38f8bf751759e2001e1da775d7f7b8b23e2841f6ea9ecc156406a04d0307fbb')
 
@@ -77,6 +76,9 @@ prepare() {
   cp ../config .config
   make olddefconfig
   ./scripts/diffconfig ../config .config
+
+  make -s kernelrelease > version
+  echo "Prepared $pkgbase version $(<version)"
 }
 
 build() {
@@ -105,10 +107,8 @@ _package() {
     wireguard-arch
   )
 
-  local modulesdir="$pkgdir/usr/lib/modules/${_modver}"
-  local builddir="$pkgdir/usr/lib/modules/${_modver}/build"
-
   cd $_srcname
+  local modulesdir="$pkgdir/usr/lib/modules/$(<version)"
 
   echo "Installing boot image..."
   # systemd expects to find the kernel here to allow hibernation
@@ -123,16 +123,15 @@ _package() {
     DEPMOD=/doesnt/exist modules_install  # Suppress depmod
 
   # remove build link
-  rm "$builddir"
+  rm "$modulesdir"/build
 }
 
 _package-headers() {
   pkgdesc="Headers and scripts for building modules for the $pkgdesc kernel"
   depends=(pahole)
 
-  local builddir="$pkgdir/usr/lib/modules/${_modver}/build"
-
   cd $_srcname
+  local builddir="$pkgdir/usr/lib/modules/$(<version)/build"
 
   echo "Installing build files..."
   install -Dt "$builddir" -m644 .config Makefile Module.symvers System.map vmlinux
@@ -211,9 +210,8 @@ _package-headers() {
 _package-docs() {
   pkgdesc="Documentation for the $pkgdesc kernel"
 
-  local builddir="$pkgdir/usr/lib/modules/${_modver}/build"
-
   cd $_srcname
+  local builddir="$pkgdir/usr/lib/modules/$(<version)/build"
 
   echo "Installing documentation..."
   local src dst
