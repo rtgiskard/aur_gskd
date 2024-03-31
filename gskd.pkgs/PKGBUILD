@@ -82,6 +82,7 @@ package_gskd-tool() {
 		'qrencode' 'zbar'
 		'p7zip' 'clamav'
 		'android-tools'
+		'scrcpy'
 
 		'v4l2loopback-dkms'
 		'v4l2loopback-utils'
