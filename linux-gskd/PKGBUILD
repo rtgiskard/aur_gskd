@@ -5,13 +5,13 @@
 # - checksum: updpkgsums
 
 pkgbase=linux-gskd
-refver=6.7.4.arch1
+refver=6.8.3.arch1
 pkgver=${refver%.*}
 pkgrel=1
 pkgdesc='Linux'
 url='https://github.com/archlinux/linux'
 arch=(x86_64)
-license=(GPL2)
+license=(GPL-2.0-only)
 makedepends=(
   bc
   cpio
@@ -29,7 +29,10 @@ makedepends=(
   #python-sphinx
   #texlive-latexextra
 )
-options=('!strip')
+options=(
+  !debug
+  !strip
+)
 _srcname=linux-${refver%.*}
 _srctag=v${refver%.*}-${refver##*.}
 source=(
@@ -42,11 +45,11 @@ validpgpkeys=(
   647F28654894E3BD457199BE38DBBDC86092693E  # Greg Kroah-Hartman
   83BC8889351B5DEBBB68416EB8AC08600F108CDF  # Jan Alexander Steffens (heftig)
 )
-b2sums=('578114990b2987e2b241a7492bd4a69c46adfd613eba9715d63fd4565c19678dfab06b5107a0ff791e9a3190cb52b75a76d231aa39d4e7fba24e79f7f18935a1'
+b2sums=('d03f8938da5a3322447fa639718590f5630cd391de45952bf2ca697d95210cc47d4ff27f26b7ebe5ce2328ea4f4df040ed0f335a3607fa8c05feb17a8c7d545c'
         'SKIP'
-        'd07daffabcea4c6c5cce2a5f73553471e634f9a5d3dcbe041834bfb22292bb33882f7ea6d95422d04db2276074914877b9a3f2b67b171cf8e304b5be5c0a4b68'
+        '4425073d141ee335b3cfb4a575d4a946481ced4993b3ed7657c3a74ae6719f2c131109d741caa1e21ca598db772ec880dfa0af4d6bbd14c4c8afd51bc54e1a1d'
         'SKIP'
-        'ebe7424155919ecf5160f2ce83ea01777db675dd328d1053241987e56c304acdd38f8bf751759e2001e1da775d7f7b8b23e2841f6ea9ecc156406a04d0307fbb')
+        '989201ecf0c2a835af271f6280ef242f9412796d17d8e70e0b68b4476c1259894c28f64382febd7e10dace214179552c2d72f76ed90b2ade2ad3c8bce61dcfe6')
 
 export KBUILD_BUILD_HOST=archlinux
 export KBUILD_BUILD_USER=$pkgbase
