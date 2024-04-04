@@ -72,7 +72,7 @@ package_gskd-tool() {
 		'oath-toolkit' 'libpam-google-authenticator'
 
 		'mesa-utils' 'vulkan-tools' 'vdpauinfo' 'libva-utils'
-		'dmidecode' 'usbutils' 'smartmontools' 'nvme-cli'
+		'dmidecode' 'usbutils' 'smartmontools' 'nvme-cli' 'ddcutil'
 		'sysstat' 'procps-ng' 'lsof' 'xorg-xauth'
 		'iputils' 'socat' 'mtr'
 
