@@ -74,7 +74,7 @@ package_gskd-tool() {
 		'mesa-utils' 'vulkan-tools' 'vdpauinfo' 'libva-utils'
 		'dmidecode' 'usbutils' 'smartmontools' 'nvme-cli' 'ddcutil'
 		'sysstat' 'procps-ng' 'lsof' 'xorg-xauth'
-		'iputils' 'socat' 'mtr'
+		'iputils' 'socat' 'tcpdump' 'mtr' 'iperf3'
 
 		'iw' 'hostapd' 'bluez-utils'
 		'curl' 'wget' 'aria2'
