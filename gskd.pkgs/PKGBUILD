@@ -41,6 +41,7 @@ package_gskd-dev() {
 		'meson' 'make' 'pkgconf' 'patch' 'patchelf'
 		'binutils' 'pahole' 'fakeroot' 'file' 'which'
 		'gettext' 'bison' 'flex' 'automake' 'cmake' 'debugedit'
+		'tree-sitter-cli'
 
 		'git' 'git-lfs' 'd2'
 		'astyle' 'yapf' 'ruff' 'stylua' 'shfmt'
