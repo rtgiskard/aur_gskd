@@ -1,6 +1,8 @@
 pkg/
 src/
 
+*-git/*/
+
 *.tar.*
 *.zst
 *.zip
