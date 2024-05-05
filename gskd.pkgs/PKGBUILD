@@ -7,7 +7,7 @@ pkgname=(
 )
 pkgbase=gskd
 pkgver=0.1
-pkgrel=7
+pkgrel=8
 epoch=
 pkgdesc="giskard's package set"
 arch=('any')
@@ -70,7 +70,7 @@ package_gskd-tool() {
 		'bash-completion'
 
 		'sudo' 'cronie' 'thermald' 'compsize'
-		'oath-toolkit' 'libpam-google-authenticator'
+		'oath-toolkit'
 
 		'mesa-utils' 'vulkan-tools' 'vdpauinfo' 'libva-utils'
 		'dmidecode' 'usbutils' 'smartmontools' 'nvme-cli' 'ddcutil'
@@ -126,14 +126,14 @@ package_gskd-desk() {
 
 		'foot' #'kitty'
 		'networkmanager'
-		'xdg-user-dirs'
 
 		# desktop: sway
 		#'sway' 'swaybg' 'swayidle' 'swaylock'
 		#'xdg-desktop-portal-wlr'
 
-		# desktop: hyprland (aur: hyprland, satty)
-		'hyprland-git' 'hyprpaper' 'hyprlock' 'hypridle'
+		# desktop: hyprland (aur: hyprland, hyprlock, satty)
+		'hyprland-git' 'hyprlock-git' 'satty-git'
+		'hyprpaper' 'hypridle'
 		'xdg-desktop-portal-hyprland'
 
 		'seatd'
@@ -142,7 +142,6 @@ package_gskd-desk() {
 
 		'waybar' 'wofi' 'swaync'
 		'playerctl' 'brightnessctl'
-		'satty-git'
 
 		# desktop: gnome
 		#'gdm' 'gnome-keyring' 'seahorse' 'xdg-desktop-portal-gnome'
