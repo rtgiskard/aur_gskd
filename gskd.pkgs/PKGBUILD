@@ -6,8 +6,8 @@ pkgname=(
 	'gskd-aur' 'gskd-hw'
 )
 pkgbase=gskd
-pkgver=0.1
-pkgrel=8
+pkgver=0.2
+pkgrel=1
 epoch=
 pkgdesc="giskard's package set"
 arch=('any')
@@ -64,20 +64,21 @@ package_gskd-dev() {
 
 package_gskd-tool() {
 	depends=(
-		'neovim' 'python-pynvim'
+		'neovim' 'python-pynvim' 'tmux'
 		'tree' 'ripgrep' 'fd' 'fzf' 'rhash'
-		'bc' 'tmux'
-		'bash-completion'
+		'bc' 'bash-completion'
 
-		'sudo' 'cronie' 'thermald' 'compsize'
-		'oath-toolkit'
+		'sudo' 'cronie' 'compsize' 'oath-toolkit'
+		'thermald' 'power-profiles-daemon'
 
 		'mesa-utils' 'vulkan-tools' 'vdpauinfo' 'libva-utils'
 		'dmidecode' 'usbutils' 'smartmontools' 'nvme-cli' 'ddcutil'
-		'sysstat' 'procps-ng' 'lsof' 'xorg-xauth' 'wev'
+		'bluez' 'bluez-mesh' 'bluez-obex' 'bluez-utils' 'blueman'
+		'iw' 'hostapd'
+
+		'sysstat' 'procps-ng' 'lsof' 'wev' # 'xorg-xauth'
 		'iputils' 'socat' 'tcpdump' 'mtr' 'iperf3'
 
-		'iw' 'hostapd' 'bluez-utils'
 		'curl' 'wget' 'aria2'
 		'libisoburn' 'cdrtools'
 		'qrencode' 'zbar'
@@ -132,7 +133,8 @@ package_gskd-desk() {
 		#'xdg-desktop-portal-wlr'
 
 		# desktop: hyprland (aur: hyprland, hyprlock, satty)
-		'hyprland-git' 'hyprlock-git' 'satty-git'
+		'hyprland-git' 'hyprlock-git'
+		'hyprpicker-git' 'satty-git'
 		'hyprpaper' 'hypridle'
 		'xdg-desktop-portal-hyprland'
 
@@ -167,11 +169,12 @@ package_gskd-i18n() {
 package_gskd-apps() {
 	depends=(
 		# sel:
-		'gnu-free-fonts' 'qt6-multimedia-gstreamer'
+		#'gnu-free-fonts' 'qt6-multimedia-gstreamer'
 
 		'nautilus' 'file-roller' 'evince' 'gedit'
-		'gthumb' 'flameshot' 'easyeffects' 'obs-studio'
+		'helvum' 'easyeffects' 'obs-studio' 'gthumb'
 		'strawberry' 'celluloid' 'foliate' 'djview'
+		#'flameshot'
 
 		'inkscape' 'gimp' 'mpv' 'ffmpeg'
 		'flac' 'mac' 'lame' 'opus-tools' 'vorbis-tools' 'wavpack'
