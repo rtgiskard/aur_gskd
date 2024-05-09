@@ -1,7 +1,7 @@
 # Maintainer: Alexis Rouillard <contact@arouillard.fr>
 
 pkgname=waybar-git
-pkgver=r3428.195c92cd
+pkgver=r3429.6b597d74
 pkgrel=1
 pkgdesc='Highly customizable Wayland bar for Sway and Wlroots based compositors (GIT)'
 arch=('x86_64')
@@ -49,7 +49,7 @@ optdepends=(
     'otf-font-awesome: Icons in the default configuration'
 )
 
-source=("${pkgname}::git+https://github.com/Alexays/Waybar")
+source=("${pkgname}::git+https://github.com/rtgiskard/Waybar#branch=dev")
 
 sha1sums=('SKIP')
 
