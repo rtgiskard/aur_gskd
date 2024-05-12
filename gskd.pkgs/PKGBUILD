@@ -141,7 +141,7 @@ package_gskd-desk() {
 		'greetd-regreet'
 		'polkit-gnome'
 
-		'waybar-git' 'swaync-git' 'satty-git' 'wofi'
+		'waybar-git' 'swaync-git' 'satty-git' 'wleave-git' 'wofi'
 		'playerctl' 'brightnessctl'
 
 		# desktop: gnome
