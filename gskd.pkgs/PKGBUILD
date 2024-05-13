@@ -7,7 +7,7 @@ pkgname=(
 )
 pkgbase=gskd
 pkgver=0.2
-pkgrel=1
+pkgrel=2
 epoch=
 pkgdesc="giskard's package set"
 arch=('any')
@@ -58,7 +58,7 @@ package_gskd-dev() {
 		'python-python-socks' 'python-socksio' 'python-pysocks'
 		'python-debugpy'
 
-		'nodejs' 'yarn'
+		'nodejs' 'yarn' 'sassc'
 	)
 }
 
