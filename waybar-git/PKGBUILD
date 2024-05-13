@@ -1,7 +1,7 @@
 # Maintainer: Alexis Rouillard <contact@arouillard.fr>
 
 pkgname=waybar-git
-pkgver=r3429.6b597d74
+pkgver=r3430.98982921
 pkgrel=1
 pkgdesc='Highly customizable Wayland bar for Sway and Wlroots based compositors (GIT)'
 arch=('x86_64')
@@ -16,7 +16,6 @@ depends=(
     'fmt'
     'jack' 'libjack.so'
     'wayland'
-    'libdate-tz.so'
     'libspdlog.so'
     'gtk-layer-shell'
     'libupower-glib.so'

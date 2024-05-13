@@ -132,9 +132,8 @@ package_gskd-desk() {
 		#'sway' 'swaybg' 'swayidle' 'swaylock'
 		#'xdg-desktop-portal-wlr'
 
-		# desktop: hyprland (aur: hyprland, hyprlock, satty)
-		'hyprland-git' 'hyprlock-git'
-		'hyprpicker-git' 'satty-git'
+		# desktop: hyprland (aur: hyprland, hyprlock, satty, ..)
+		'hyprland-git' 'hyprlock-git' 'hyprpicker-git'
 		'hyprpaper' 'hypridle'
 		'xdg-desktop-portal-hyprland'
 
@@ -142,7 +141,7 @@ package_gskd-desk() {
 		'greetd-regreet'
 		'polkit-gnome'
 
-		'waybar' 'wofi' 'swaync'
+		'waybar-git' 'swaync-git' 'satty-git' 'wofi'
 		'playerctl' 'brightnessctl'
 
 		# desktop: gnome
