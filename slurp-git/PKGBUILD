@@ -2,7 +2,7 @@
 
 pkgname=slurp-git
 _pkgname=slurp
-pkgver=v1.5.0.r3.gdcb2dc7
+pkgver=v1.5.0.r3.g2cf8187
 pkgrel=1
 epoch=1
 pkgdesc='Select a region in a Wayland compositor'
