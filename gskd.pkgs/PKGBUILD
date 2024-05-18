@@ -150,6 +150,7 @@ package_gskd-desk() {
 		'gnome-calendar' 'gnome-weather' 'gnome-font-viewer'
 		'gnome-remote-desktop' 'gnome-sound-recorder' 'cheese'
 		'gnome-system-monitor'
+		#'gnome-browser-connector-git'
 	)
 }
 
@@ -266,12 +267,6 @@ package_gskd-aur() {
 		'flacon'
 
 		'clash-meta'
-
-		# desktop: sway
-		#'greetd' 'greetd-wlgreet-git' 'greetd-gtkgreet-git'
-
-		# desktop: gnome
-		'gnome-browser-connector-git'
 
 		# misc
 		'amdgpu_top-git'
