@@ -258,6 +258,8 @@ package_gskd-aur() {
 		'otf-comic-neue'
 		'ttf-lxgw-wenkai'
 
+		'bibata-cursor-git'
+
 		'deadbeef'
 		'deadbeef-mpris2-plugin'
 		'deadbeef-plugin-spectrogram-gtk3-git'
@@ -265,12 +267,12 @@ package_gskd-aur() {
 		'deadbeef-plugin-quicksearch-gtk3-git'
 
 		'flacon'
+		'insomnia-bin'
 
 		'clash-meta'
 
 		# misc
 		'amdgpu_top-git'
-		'vlmcsd-git'
 	)
 }
 
