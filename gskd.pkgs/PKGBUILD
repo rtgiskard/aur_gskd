@@ -58,7 +58,7 @@ package_gskd-dev() {
 		'python-python-socks' 'python-socksio' 'python-pysocks'
 		'python-debugpy'
 
-		'nodejs' 'yarn' 'sassc'
+		'deno' 'yarn' 'sassc'
 	)
 }
 
