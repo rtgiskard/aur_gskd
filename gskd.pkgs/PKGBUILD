@@ -7,7 +7,7 @@ pkgname=(
 )
 pkgbase=gskd
 pkgver=0.2
-pkgrel=2
+pkgrel=4
 epoch=
 pkgdesc="giskard's package set"
 arch=('any')
@@ -36,7 +36,7 @@ package_gskd-dev() {
 	depends=(
 		'gcc' 'llvm' 'gdb' 'lldb' 'valgrind'
 		'go' 'go-tools'
-		'rust'
+		'rust' 'rust-analyzer' 'rust-src'
 
 		'meson' 'make' 'pkgconf' 'patch' 'patchelf'
 		'binutils' 'pahole' 'fakeroot' 'file' 'which'
@@ -125,8 +125,9 @@ package_gskd-desk() {
 		'wayland' 'wl-clipboard' 'wf-recorder' 'grim' 'slurp'
 		'pipewire' 'wireplumber' 'pipewire-jack' 'pipewire-pulse'
 
-		'foot' #'kitty'
-		'networkmanager'
+		'seatd' 'greetd' 'greetd-regreet-git' 'cage'
+		'polkit-gnome' 'networkmanager'
+		'foot-git'
 
 		# desktop: sway
 		#'sway' 'swaybg' 'swayidle' 'swaylock'
@@ -136,10 +137,6 @@ package_gskd-desk() {
 		'hyprland-git' 'hyprlock-git' 'hyprpicker-git'
 		'hyprpaper' 'hypridle'
 		'xdg-desktop-portal-hyprland'
-
-		'seatd'
-		'greetd-regreet'
-		'polkit-gnome'
 
 		'waybar-git' 'swaync-git' 'satty-git' 'wleave-git' 'wofi'
 		'playerctl' 'brightnessctl'
@@ -172,7 +169,7 @@ package_gskd-apps() {
 		#'gnu-free-fonts' 'qt6-multimedia-gstreamer'
 
 		'nautilus' 'file-roller' 'evince' 'gedit'
-		'helvum' 'easyeffects' 'obs-studio' 'gthumb'
+		'helvum' 'easyeffects' 'obs-studio' 'imv'
 		'strawberry' 'celluloid' 'foliate' 'djview'
 		#'flameshot'
 
