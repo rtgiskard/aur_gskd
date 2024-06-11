@@ -266,7 +266,7 @@ package_gskd-aur() {
 		'flacon'
 		'insomnia-bin'
 
-		'clash-meta'
+		'clash-meta-alpha-git'
 
 		# misc
 		'amdgpu_top-git'
