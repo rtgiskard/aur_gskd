@@ -137,6 +137,7 @@ package_gskd-desk() {
 		'hyprland-git' 'hyprlock-git' 'hyprpicker-git'
 		'hyprpaper' 'hypridle'
 		'xdg-desktop-portal-hyprland'
+		'xdg-desktop-portal-gtk'
 
 		'waybar-git' 'swaync-git' 'satty-git' 'wofi'
 		'playerctl' 'brightnessctl'
