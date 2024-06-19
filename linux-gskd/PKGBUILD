@@ -5,7 +5,7 @@
 # - checksum: updpkgsums
 
 pkgbase=linux-gskd
-refver=6.9.1.arch1
+refver=6.9.5.arch1
 pkgver=${refver%.*}
 pkgrel=1
 pkgdesc='Linux'
@@ -27,6 +27,7 @@ makedepends=(
   #graphviz
   #imagemagick
   #python-sphinx
+  #python-yaml
   #texlive-latexextra
 )
 options=(
@@ -45,9 +46,9 @@ validpgpkeys=(
   647F28654894E3BD457199BE38DBBDC86092693E  # Greg Kroah-Hartman
   83BC8889351B5DEBBB68416EB8AC08600F108CDF  # Jan Alexander Steffens (heftig)
 )
-b2sums=('388af1d13e78a424f72a961697f4b0b6a234e54ce1e4a2532fc73717301e048c6f4a6251b6e3c4541179d1382566c3f411baa6883818a10d178ef27d036b5379'
+b2sums=('a120ee2517ff9bdc164a55cbd78929b545d77d8f3b4d09e8903ea9c2f1a85ef837b079524dd465b3f0cf268ee1f6db5166ccb5676ac67b31bca1927ea0a6997b'
         'SKIP'
-        '3d8c25071e26979713ea100a4dca112eccd21bc421a6292354f49b19b462697985777fb7624d7fed320ea392d20b121c03b9af2f6b3fe1a6d7d511e092395ed2'
+        'fcc4a45448386f158b20487035037e03694901b63d77a3ce92906f5f7faaaf36346e540bebdb035f8fb42647632efa6d452d2fb52c97996bda81c3032d9fa055'
         'SKIP'
         'fccee541ab3d36583400a0d928a8f5947c64fdb47da53f0af11cf2c61bdfe2027cba825b76696ccaad58a50ccebf387e7a7fd7be5f9d5c6dbd823496b8375503')
 
@@ -87,6 +88,7 @@ prepare() {
 build() {
   cd $_srcname
   make all
+  make -C tools/bpf/bpftool vmlinux.h feature-clang-bpf-co-re=1
 }
 
 _package() {
@@ -137,7 +139,8 @@ _package-headers() {
   local builddir="$pkgdir/usr/lib/modules/$(<version)/build"
 
   echo "Installing build files..."
-  install -Dt "$builddir" -m644 .config Makefile Module.symvers System.map vmlinux
+  install -Dt "$builddir" -m644 .config Makefile Module.symvers System.map \
+    version vmlinux tools/bpf/bpftool/vmlinux.h
   install -Dt "$builddir/kernel" -m644 kernel/Makefile
   install -Dt "$builddir/arch/x86" -m644 arch/x86/Makefile
   cp -t "$builddir" -a scripts
@@ -232,6 +235,7 @@ _package-docs() {
 pkgname=(
   "$pkgbase"
   "$pkgbase-headers"
+  #"$pkgbase-docs"
 )
 for _p in "${pkgname[@]}"; do
   eval "package_$_p() {
