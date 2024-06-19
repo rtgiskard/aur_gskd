@@ -126,7 +126,7 @@ package_gskd-desk() {
 		'pipewire' 'wireplumber' 'pipewire-jack' 'pipewire-pulse'
 
 		'seatd' 'greetd' 'greetd-regreet-git' 'cage'
-		'polkit-gnome' 'networkmanager'
+		'polkit-gnome' 'networkmanager' 'nm-connection-editor'
 		'foot-git'
 
 		# desktop: sway

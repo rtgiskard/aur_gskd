@@ -3,7 +3,7 @@ pkgname=swaync-git
 _pkgname=swaync
 pkgver=0.10.1.r24.07f6bbd
 pkgrel=1
-pkgdesc="A simple notification daemon with a GTK panel for checking previous notifications like other DEs"
+pkgdesc="A simple notification daemon with a customizable GTK panel"
 url="https://github.com/rtgiskard/SwayNotificationCenter"
 arch=(
 	'x86_64'
