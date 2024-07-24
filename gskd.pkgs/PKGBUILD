@@ -171,15 +171,15 @@ package_gskd-apps() {
 
 		'nautilus' 'file-roller' 'evince' 'gedit'
 		'helvum' 'easyeffects' 'obs-studio' 'imv'
-		'strawberry' 'celluloid' 'foliate' 'djview'
-		#'flameshot'
+		'celluloid' 'foliate' 'djview'
+		#'strawberry' 'flameshot'
 
-		'inkscape' 'gimp' 'mpv' 'ffmpeg'
+		'inkscape' 'gimp' 'mpv' 'ffmpeg' #'cmus'
 		'flac' 'mac' 'lame' 'opus-tools' 'vorbis-tools' 'wavpack'
 		'mkvtoolnix-gui' 'mediainfo' 'easytag'
 
 		'graphviz' 'fontforge'
-		'glade' 'gnome-builder'
+		'glade' #'gnome-builder'
 		'virt-manager' 'remmina'
 		'wireshark-qt' 'd-spy'
 
@@ -202,7 +202,7 @@ package_gskd-extra() {
 
 		# game
 		#'fceux' 'yuzu'
-		'gnome-2048'
+		#'gnome-2048'
 	)
 }
 
