@@ -7,7 +7,7 @@ pkgname=(
 )
 pkgbase=gskd
 pkgver=0.2
-pkgrel=4
+pkgrel=7
 epoch=
 pkgdesc="giskard's package set"
 arch=('any')
@@ -66,7 +66,7 @@ package_gskd-tool() {
 	depends=(
 		'neovim' 'python-pynvim' 'tmux'
 		'tree' 'ripgrep' 'fd' 'fzf' 'rhash'
-		'bc' 'bash-completion'
+		'bc' 'bash-completion' 'yazi'
 
 		'sudo' 'cronie' 'compsize' 'oath-toolkit'
 		'thermald' 'power-profiles-daemon'
@@ -169,7 +169,7 @@ package_gskd-apps() {
 		# sel:
 		#'gnu-free-fonts' 'qt6-multimedia-gstreamer'
 
-		'nautilus' 'file-roller' 'evince' 'gedit'
+		'nautilus' 'file-roller' 'evince'
 		'helvum' 'easyeffects' 'obs-studio' 'imv'
 		'celluloid' 'foliate' 'djview'
 		#'strawberry' 'flameshot'

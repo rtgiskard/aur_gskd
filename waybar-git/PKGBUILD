@@ -1,7 +1,7 @@
 # Maintainer: Alexis Rouillard <contact@arouillard.fr>
 
 pkgname=waybar-git
-pkgver=0.10.4.r6.003dd3a9
+pkgver=0.10.4.r19.21906f07
 pkgrel=1
 pkgdesc='Highly customizable Wayland bar for Sway and Wlroots based compositors (GIT)'
 arch=('x86_64')

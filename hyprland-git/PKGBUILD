@@ -3,22 +3,22 @@
 # Contributor: ThatOneCalculator <kainoa at t1c dot dev>
 
 pkgname=hyprland-git
-pkgver=0.41.2.r133.e6732203
+pkgver=0.42.0.r32.d21a6b12
 pkgrel=1
 pkgdesc="An independent, highly customizable, dynamic tiling Wayland compositor"
 arch=(x86_64 aarch64)
 url="https://github.com/hyprwm/Hyprland"
 license=(BSD)
 depends=(
-  aquamarine-git
+  aquamarine
   cairo
   gcc-libs
   glib2
   glibc
   glslang
-  hyprutils-git
-  hyprcursor-git
-  hyprlang-git
+  hyprutils
+  hyprcursor
+  hyprlang
   libdisplay-info
   libdrm
   libglvnd
@@ -54,7 +54,7 @@ makedepends=(
   cmake
   gdb
   git
-  hyprwayland-scanner-git
+  hyprwayland-scanner
   jq
   make
   meson
