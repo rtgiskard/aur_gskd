@@ -37,6 +37,7 @@ package_gskd-dev() {
 		'gcc' 'llvm' 'gdb' 'lldb' 'valgrind'
 		'go' 'go-tools'
 		'rust' 'rust-analyzer' 'rust-src'
+		'zig' 'vala'
 
 		'meson' 'make' 'pkgconf' 'patch' 'patchelf'
 		'binutils' 'pahole' 'fakeroot' 'file' 'which'
@@ -203,6 +204,7 @@ package_gskd-extra() {
 		# game
 		#'fceux' 'yuzu'
 		#'gnome-2048'
+		#'hedgewars'
 	)
 }
 
