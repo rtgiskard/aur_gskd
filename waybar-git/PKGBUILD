@@ -1,17 +1,16 @@
 # Maintainer: Alexis Rouillard <contact@arouillard.fr>
 
 pkgname=waybar-git
-pkgver=0.10.4.r19.21906f07
+pkgver=0.11.0.r9.ae997ad7
 pkgrel=1
 pkgdesc='Highly customizable Wayland bar for Sway and Wlroots based compositors (GIT)'
 arch=('x86_64')
-url='https://github.com/Alexays/Waybar/'
+url='https://github.com/Alexays/Waybar'
 license=('MIT')
 provides=('waybar')
 conflicts=('waybar')
 depends=(
 	'gtkmm3'
-	'libjsoncpp.so'
 	'libsigc++'
 	'fmt'
 	'jack' 'libjack.so'
@@ -39,12 +38,13 @@ makedepends=(
 	'meson'
 	'scdoc' # For generating manpages
 	'wayland-protocols'
+	'glib2-devel'
 )
 optdepends=(
 	'otf-font-awesome: Icons in the default configuration'
 )
 
-source=("${pkgname}::git+https://github.com/rtgiskard/Waybar#branch=dev")
+source=($pkgname::git+${url})
 
 sha1sums=('SKIP')
 

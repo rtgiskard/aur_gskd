@@ -146,6 +146,7 @@ package_gskd-desk() {
 		# desktop: gnome
 		#'gdm' 'gnome-keyring' 'seahorse' 'xdg-desktop-portal-gnome'
 		#'gnome-control-center' 'gnome-themes-extra' 'gnome-shell-extensions'
+		'gnome-keyring' 'seahorse'
 		'gnome-calendar' 'gnome-weather' 'gnome-font-viewer'
 		'gnome-remote-desktop' 'gnome-sound-recorder' 'cheese'
 		'gnome-system-monitor'
