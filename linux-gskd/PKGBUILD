@@ -5,7 +5,7 @@
 # - checksum: updpkgsums
 
 pkgbase=linux-gskd
-refver=6.10.2.arch1
+refver=6.11.1.arch1
 pkgver=${refver%.*}
 pkgrel=1
 pkgdesc='Linux'
@@ -46,11 +46,11 @@ validpgpkeys=(
   647F28654894E3BD457199BE38DBBDC86092693E  # Greg Kroah-Hartman
   83BC8889351B5DEBBB68416EB8AC08600F108CDF  # Jan Alexander Steffens (heftig)
 )
-b2sums=('ab1d2e79a1bb8a9b78ab5b1af93db7ef356cb5e14bba1121bbd3ae06b9589c8bfc32bab373acdd0ecf965ac132130e7eb34e70b35a9df1bd85b49dab97e2c02a'
+b2sums=('ac9927d74542a2d244b9d683920363ec2dbbe851ae0e069b278f1a0ba82c58b00f0f0312104b46f1b8c06585c2e6acb7eb1e63bd28499891f629c00f9a32f6b5'
         'SKIP'
-        '9c16132af733ba448db39467d0d20df7143e2f2c1acf01653afa898a3e10f5fa170db24bdede4e7083b72064a3dc4bc4e6d616d3ac7cdc0a6b25d5725ff633fc'
+        '3621c4b5476cd615d0abb2568ed8b67bc5a4022a35ae0fa2c0d9ef27d5e31fcab56d38aa0ca86320357f4cc31c7e5d3acb12222694ec83a8aab21b16847c8b81'
         'SKIP'
-        'c723ece16e720dc51fde4e379356b4f1da36e777a5745864da31240f771db3c43162c48a267160cea203ba10646a6145ab8ccd8db37db2980171b3cce4d3d2f8')
+        '58583592c1ec96892dd3ae364e8c3892ee99b332591a3cb7da852e2db002768b66677f445d62f46f950a10af3049bfe93871c82f9acc6743c31f462f3148b0a4')
 
 export KBUILD_BUILD_HOST=archlinux
 export KBUILD_BUILD_USER=$pkgbase

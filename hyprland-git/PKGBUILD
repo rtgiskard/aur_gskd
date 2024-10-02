@@ -3,7 +3,7 @@
 # Contributor: ThatOneCalculator <kainoa at t1c dot dev>
 
 pkgname=hyprland-git
-pkgver=0.43.0.r25.e74efd87
+pkgver=0.43.0.r90.e2426942
 pkgrel=1
 pkgdesc="An independent, highly customizable, dynamic tiling Wayland compositor"
 arch=(x86_64 aarch64)
