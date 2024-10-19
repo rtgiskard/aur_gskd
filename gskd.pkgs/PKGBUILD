@@ -83,7 +83,7 @@ package_gskd-tool() {
 
 		'curl' 'wget' 'aria2'
 		'libisoburn' 'cdrtools'
-		'qrencode' 'zbar'
+		'qrencode' 'zbar' 'lnav'
 		'p7zip' 'clamav'
 		'android-tools'
 		'scrcpy'
