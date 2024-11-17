@@ -7,7 +7,7 @@ pkgname=(
 )
 pkgbase=gskd
 pkgver=0.2
-pkgrel=7
+pkgrel=8
 epoch=
 pkgdesc="giskard's package set"
 arch=('any')
@@ -219,8 +219,9 @@ package_gskd-hw() { # gtr7
 		'vulkan-radeon'
 
 		# vdpau + libva: nouveau, radeonsi, virtio
-		'mesa-vdpau'
-		'libva-mesa-driver'
+		#'mesa-vdpau'
+		#'libva-mesa-driver'
+		'mesa'
 
 		#'vulkan-virtio'
 
@@ -244,8 +245,9 @@ package_gskd-hw-F57() {
 		'libva-vdpau-driver'
 
 		# vdpau + libva: nouveau, radeonsi, virtio
-		'mesa-vdpau'
-		'libva-mesa-driver'
+		#'mesa-vdpau'
+		#'libva-mesa-driver'
+		'mesa'
 
 		#'vulkan-virtio'
 	)
