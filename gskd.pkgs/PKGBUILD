@@ -7,7 +7,7 @@ pkgname=(
 )
 pkgbase=gskd
 pkgver=0.2
-pkgrel=8
+pkgrel=10
 epoch=
 pkgdesc="giskard's package set"
 arch=('any')
@@ -48,6 +48,7 @@ package_gskd-dev() {
 		'astyle' 'stylua' 'shfmt'
 		'ruff' 'uv' 'yapf'
 		'uncrustify' 'prettier'
+		'upx'
 
 		#'doctest' 'spdlog' 'hdf5-openmpi'
 		'flatbuffers' 'protobuf'
@@ -58,7 +59,7 @@ package_gskd-dev() {
 		'python-pycryptodome' 'python-yaml' 'python-uvloop'
 		'python-httpx' 'python-dbus-next' 'python-fastapi'
 		'python-python-socks' 'python-socksio' 'python-pysocks'
-		'python-debugpy'
+		'python-debugpy' 'python-coverage'
 
 		'deno' 'yarn' 'sassc'
 	)
@@ -137,8 +138,8 @@ package_gskd-desk() {
 
 		# desktop: hyprland (aur: hyprland, hyprlock, satty, ..)
 		'hyprland-git' 'hyprlock-git' 'hyprpicker-git'
-		'hyprpaper' 'hypridle'
-		'xdg-desktop-portal-hyprland'
+		'hyprpaper-git' 'hypridle-git'
+		'xdg-desktop-portal-hyprland-git'
 		'xdg-desktop-portal-gtk'
 
 		'waybar-git' 'swaync-git' 'satty-git' 'wofi'
@@ -261,6 +262,8 @@ package_gskd-aur() {
 		'otf-comic-shanns-mono'
 		'otf-comic-neue'
 		'ttf-lxgw-wenkai'
+
+		'nuitka-git'
 
 		'bibata-cursor-git'
 
