@@ -9,3 +9,5 @@ src/
 *.7z
 *.sig
 *.sign
+
+*.ttf

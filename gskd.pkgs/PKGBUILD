@@ -7,7 +7,7 @@ pkgname=(
 )
 pkgbase=gskd
 pkgver=0.2
-pkgrel=10
+pkgrel=12
 epoch=
 pkgdesc="giskard's package set"
 arch=('any')
@@ -48,7 +48,7 @@ package_gskd-dev() {
 		'astyle' 'stylua' 'shfmt'
 		'ruff' 'uv' 'yapf'
 		'uncrustify' 'prettier'
-		'upx'
+		'upx' 'ccache'
 
 		#'doctest' 'spdlog' 'hdf5-openmpi'
 		'flatbuffers' 'protobuf'
@@ -262,6 +262,7 @@ package_gskd-aur() {
 		'otf-comic-shanns-mono'
 		'otf-comic-neue'
 		'ttf-lxgw-wenkai'
+		'ttf-lxgw-neo-xihei'
 
 		'nuitka-git'
 

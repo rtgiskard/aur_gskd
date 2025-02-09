@@ -1,0 +1,16 @@
+# Maintainer: giskard <rtgiskard@gmail.com>
+
+pkgname='ttf-lxgw-neo-xihei'
+pkgver=1.213
+pkgrel=1
+pkgdesc="A Simplified Chinese sans-serif font derived from IPAex Gothic"
+arch=('any')
+url="https://github.com/lxgw/LxgwNeoXiHei"
+license=('custom:IPA')
+
+source=("$pkgname-$pkgver-$pkgrel.ttf::$url/releases/download/v$pkgver/LXGWNeoXiHei.ttf")
+sha256sums=('e6fcedbe93a450c6e765bedaa53d7d92c2d096ba3b950793d224ea1a394f25d3')
+
+package() {
+	install -Dm644 *.ttf -t "$pkgdir/usr/share/fonts/TTF"
+}
