@@ -54,7 +54,7 @@ package_gskd-dev() {
 		'flatbuffers' 'protobuf'
 		'go-swagger' 'ali'
 
-		'ipython' 'python-pip' 'python-poetry' 'python-pytest'
+		'ipython' 'python-hatchling' 'python-pytest'
 		'python-numpy' 'python-pandas' 'python-h5py-openmpi'
 		'python-pycryptodome' 'python-yaml' 'python-uvloop'
 		'python-httpx' 'python-dbus-next' 'python-fastapi'
