@@ -142,7 +142,7 @@ package_gskd-desk() {
 		'xdg-desktop-portal-hyprland-git'
 		'xdg-desktop-portal-gtk'
 
-		'waybar-git' 'swaync-git' 'satty-git' 'wofi'
+		'waybar-git' 'swaync-git' 'satty-git' 'fuzzel'
 		'playerctl' 'brightnessctl'
 
 		# desktop: gnome
