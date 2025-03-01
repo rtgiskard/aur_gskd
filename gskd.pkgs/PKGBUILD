@@ -227,7 +227,7 @@ package_gskd-hw() { # gtr7
 		#'vulkan-virtio'
 
 		# tools
-		# aur: amdgpu_top
+		'amdgpu_top'
 	)
 }
 
@@ -264,8 +264,6 @@ package_gskd-aur() {
 		'ttf-lxgw-wenkai'
 		'ttf-lxgw-neo-xihei'
 
-		'nuitka-git'
-
 		'bibata-cursor-git'
 
 		'deadbeef'
@@ -278,9 +276,6 @@ package_gskd-aur() {
 		'insomnia-bin'
 
 		'clash-meta-alpha-git'
-
-		# misc
-		'amdgpu_top-git'
 	)
 }
 
