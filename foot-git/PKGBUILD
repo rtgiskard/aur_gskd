@@ -31,7 +31,7 @@ PGO=auto
 
 pkgdesc='Wayland terminal emulator - fast, lightweight and minimalistic'
 pkgname=foot-git
-pkgver=1.20.2.r121.gc41008da
+pkgver=1.20.2.r139.geb935770
 pkgrel=1
 conflicts=('foot')
 replaces=('foot-themes')

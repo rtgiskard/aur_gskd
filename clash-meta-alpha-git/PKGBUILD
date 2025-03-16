@@ -2,7 +2,7 @@
 
 pkgname=clash-meta-alpha-git
 _pkgname=clash-meta
-pkgver=20241021.0938.3e966e82
+pkgver=20250315.1327.dee5898e
 pkgrel=1
 pkgdesc="Another Clash Kernel by MetaCubeX (git virsion)"
 arch=(x86_64)

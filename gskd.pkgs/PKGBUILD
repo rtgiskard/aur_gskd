@@ -69,7 +69,7 @@ package_gskd-tool() {
 	depends=(
 		'neovim' 'python-pynvim' 'tmux'
 		'tree' 'ripgrep' 'fd' 'fzf' 'rhash'
-		'bc' 'bash-completion' 'yazi'
+		'bc' 'bash-completion' 'yazi' 'btop'
 
 		'sudo' 'cronie' 'compsize' 'oath-toolkit'
 		'thermald' 'power-profiles-daemon'
@@ -144,6 +144,7 @@ package_gskd-desk() {
 
 		'waybar-git' 'swaync-git' 'satty-git' 'fuzzel'
 		'playerctl' 'brightnessctl'
+		'handlr-regex'
 
 		# desktop: gnome
 		#'gdm' 'gnome-keyring' 'seahorse' 'xdg-desktop-portal-gnome'
