@@ -46,7 +46,8 @@ package_gskd-dev() {
 
 		'git' 'git-lfs' 'd2'
 		'astyle' 'stylua' 'shfmt'
-		'ruff' 'uv' 'yapf'
+		'ruff' 'uv' 'yapf' 'pyright'
+		'buf' 'biome'
 		'uncrustify' 'prettier'
 		'upx' 'ccache'
 
