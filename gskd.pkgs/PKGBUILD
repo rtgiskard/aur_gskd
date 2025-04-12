@@ -40,8 +40,9 @@ package_gskd-dev() {
 		'zig' 'vala'
 
 		'meson' 'make' 'pkgconf' 'patch' 'patchelf'
-		'binutils' 'pahole' 'fakeroot' 'file' 'which'
 		'gettext' 'bison' 'flex' 'automake' 'cmake' 'debugedit'
+		'binutils' 'pahole' 'fakeroot' 'file' 'which'
+		'perf' 'bpftrace' 'bcc-tools'
 		'tree-sitter-cli'
 
 		'git' 'git-lfs' 'd2'
