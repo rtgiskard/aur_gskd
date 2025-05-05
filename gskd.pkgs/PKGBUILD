@@ -130,8 +130,8 @@ package_gskd-desk() {
 		'wayland' 'wl-clipboard' 'wf-recorder' 'grim' 'slurp'
 		'pipewire' 'wireplumber' 'pipewire-jack' 'pipewire-pulse'
 
-		'seatd' 'greetd' 'greetd-regreet-git' 'cage'
-		'polkit-gnome' 'networkmanager' 'nm-connection-editor'
+		'seatd' 'greetd' 'greetd-tuigreet' # 'greetd-regreet-git' 'cage'
+		'hyprpolkitagent' 'networkmanager' 'nm-connection-editor'
 		'foot-git'
 
 		# desktop: sway
