@@ -7,7 +7,7 @@ pkgname=(
 )
 pkgbase=gskd
 pkgver=0.2
-pkgrel=12
+pkgrel=14
 epoch=
 pkgdesc="giskard's package set"
 arch=('any')
@@ -139,12 +139,15 @@ package_gskd-desk() {
 		#'xdg-desktop-portal-wlr'
 
 		# desktop: hyprland (aur: hyprland, hyprlock, satty, ..)
-		'hyprland-git' 'hyprlock-git' 'hyprpicker-git'
-		'hyprpaper-git' 'hypridle-git'
-		'xdg-desktop-portal-hyprland-git'
+		# 'hyprland-git' 'hyprlock-git' 'hyprpicker-git'
+		# 'hyprpaper-git' 'hypridle-git'
+		'hyprland' 'hypridle' 'hyprlock' 'hyprpaper' 'hyprpicker'
+		'xdg-desktop-portal-hyprland'
 		'xdg-desktop-portal-gtk'
 
-		'waybar-git' 'swaync-git' 'satty-git' 'fuzzel'
+		'waybar-git' 'swaync-git'
+
+		'satty' 'fuzzel'
 		'playerctl' 'brightnessctl'
 		'handlr-regex'
 

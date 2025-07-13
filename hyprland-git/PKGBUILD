@@ -4,7 +4,7 @@
 # Contributor: ThatOneCalculator <kainoa at t1c dot dev>
 
 pkgname=hyprland-git
-pkgver=0.48.0.r86.gf48ee7a3
+pkgver=0.49.0.r71.g2794f485
 pkgrel=1
 pkgdesc="Hyprland is an independent, highly customizable, dynamic tiling Wayland compositor that doesn't sacrifice on its looks"
 arch=(x86_64 aarch64)
