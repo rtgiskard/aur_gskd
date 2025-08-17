@@ -1,7 +1,7 @@
 # Maintainer: Gustavo Alvarez <sl1pkn07@gmail.com>
 
 pkgname=flacon-git
-pkgver=11.4.0.2.g851a407
+pkgver=12.0.0.16.g4473f9c
 pkgrel=1
 pkgdesc="Extracts individual tracks from one big audio file containing the entire album of music and saves them as separate audio files. (Git Version)"
 arch=('x86_64')

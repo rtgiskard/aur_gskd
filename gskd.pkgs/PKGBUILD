@@ -7,7 +7,7 @@ pkgname=(
 )
 pkgbase=gskd
 pkgver=0.2
-pkgrel=14
+pkgrel=16
 epoch=
 pkgdesc="giskard's package set"
 arch=('any')
@@ -20,7 +20,8 @@ package_gskd-sys() {
 		# sel:
 		'mkinitcpio'
 
-		'linux-gskd' 'linux-gskd-headers' #'linux'
+		'linux-gskd' 'linux-gskd-headers'
+		#'linux' 'linux-headers'
 		'linux-firmware'
 		'grub' 'efibootmgr' 'systemd'
 
@@ -28,7 +29,7 @@ package_gskd-sys() {
 		'btrfs-progs' 'e2fsprogs' 'dosfstools' 'exfat-utils' 'ntfs-3g'
 		'nfs-utils' 'cifs-utils' 'squashfs-tools'
 
-		'bridge-utils' 'iproute2' 'nftables'
+		'bridge-utils' 'iproute2' 'ipvsadm' 'nftables' 'iptables-nft'
 	)
 }
 
@@ -112,6 +113,7 @@ package_gskd-serv() {
 
 		'libvirt' 'qemu-base' 'qemu-user-static-binfmt'
 		'podman' 'docker-compose'
+		'kubectl' 'helm' 'k9s'
 
 		'openssh' 'rsync'
 		'nbd'
@@ -121,7 +123,7 @@ package_gskd-serv() {
 		#'samba' 'atftp'
 
 		'headscale' 'tailscale'
-		'zerotier-one'
+		#'zerotier-one'
 	)
 }
 
@@ -132,7 +134,7 @@ package_gskd-desk() {
 
 		'seatd' 'greetd' 'greetd-tuigreet' # 'greetd-regreet-git' 'cage'
 		'hyprpolkitagent' 'networkmanager' 'nm-connection-editor'
-		'foot-git'
+		'foot'
 
 		# desktop: sway
 		#'sway' 'swaybg' 'swayidle' 'swaylock'
@@ -145,7 +147,7 @@ package_gskd-desk() {
 		'xdg-desktop-portal-hyprland'
 		'xdg-desktop-portal-gtk'
 
-		'waybar-git' 'swaync-git'
+		'waybar' 'swaync-git'
 
 		'satty' 'fuzzel'
 		'playerctl' 'brightnessctl'
