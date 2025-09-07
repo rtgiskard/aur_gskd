@@ -38,7 +38,7 @@ package_gskd-dev() {
 		'gcc' 'llvm' 'gdb' 'lldb' 'valgrind'
 		'go' 'go-tools'
 		'rust' 'rust-analyzer' 'rust-src'
-		'zig' 'vala'
+		# 'zig' 'vala'
 
 		'meson' 'make' 'pkgconf' 'patch' 'patchelf'
 		'gettext' 'bison' 'flex' 'automake' 'cmake' 'debugedit'
@@ -113,7 +113,8 @@ package_gskd-serv() {
 
 		'libvirt' 'qemu-base' 'qemu-user-static-binfmt'
 		'podman' 'docker-compose'
-		'kubectl' 'helm' 'k9s'
+		'containerd' 'nerdctl'
+		'kubectl' 'helm' 'k9s' 'crictl'
 
 		'openssh' 'rsync'
 		'nbd'
