@@ -114,7 +114,7 @@ package_gskd-serv() {
 		'libvirt' 'qemu-base' 'qemu-user-static-binfmt'
 		'podman' 'docker-compose'
 		'containerd' 'nerdctl'
-		'kubectl' 'helm' 'k9s' 'crictl'
+		'kubectl' 'helm' 'k9s' 'crictl' 'kompose'
 
 		'openssh' 'rsync'
 		'nbd'
