@@ -58,7 +58,7 @@ package_gskd-dev() {
 		'go-swagger' 'ali'
 
 		'ipython' 'python-hatchling' 'python-pytest'
-		'python-numpy' 'python-pandas' 'python-h5py-openmpi'
+		'python-numpy' # 'python-pandas' 'python-h5py-openmpi'
 		'python-pycryptodome' 'python-yaml' 'python-uvloop'
 		'python-httpx' 'python-dbus-next' 'python-fastapi'
 		'python-python-socks' 'python-socksio' 'python-pysocks'
@@ -123,7 +123,8 @@ package_gskd-serv() {
 		'nginx'
 		#'samba' 'atftp'
 
-		'headscale' 'tailscale'
+		# 'headscale'
+		'tailscale'
 		#'zerotier-one'
 	)
 }
@@ -134,19 +135,28 @@ package_gskd-desk() {
 		'pipewire' 'wireplumber' 'pipewire-jack' 'pipewire-pulse'
 
 		'seatd' 'greetd' 'greetd-tuigreet' # 'greetd-regreet-git' 'cage'
-		'hyprpolkitagent' 'networkmanager' 'nm-connection-editor'
+		'networkmanager' 'nm-connection-editor'
 		'foot'
 
 		# desktop: sway
 		#'sway' 'swaybg' 'swayidle' 'swaylock'
 		#'xdg-desktop-portal-wlr'
 
+		# desktop: niri
+		'niri' 'xwayland-satellite'
+
 		# desktop: hyprland (aur: hyprland, hyprlock, satty, ..)
 		# 'hyprland-git' 'hyprlock-git' 'hyprpicker-git'
 		# 'hyprpaper-git' 'hypridle-git'
-		'hyprland' 'hypridle' 'hyprlock' 'hyprpaper' 'hyprpicker'
-		'xdg-desktop-portal-hyprland'
+		# 'hyprland' 'hyprpolkitagent' 'hyprpicker'
+
+		'hypridle' 'hyprlock' 'hyprpaper'
+
+		# 'xdg-desktop-portal-hyprland'
 		'xdg-desktop-portal-gtk'
+		'xdg-desktop-portal-gnome'
+		# for old gtk apps
+		'gnome-themes-extra'
 
 		'waybar' 'swaync-git'
 
