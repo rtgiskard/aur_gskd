@@ -26,10 +26,12 @@ package_gskd-sys() {
 		'grub' 'efibootmgr' 'systemd'
 
 		'mdadm' 'lvm2' 'cryptsetup' 'gptfdisk'
-		'btrfs-progs' 'e2fsprogs' 'dosfstools' 'exfat-utils' 'ntfs-3g'
-		'nfs-utils' 'cifs-utils' 'squashfs-tools'
+		'btrfs-progs' 'e2fsprogs' 'dosfstools' 'exfat-utils' # 'ntfs-3g'
+		# 'nfs-utils' 'cifs-utils'
+		'squashfs-tools'
 
-		'bridge-utils' 'iproute2' 'ipvsadm' 'nftables' 'iptables-nft'
+		'bridge-utils' 'iproute2' 'nftables' 'iptables-nft'
+		# 'ipvsadm' 'ipset'
 	)
 }
 
@@ -47,11 +49,11 @@ package_gskd-dev() {
 		'tree-sitter-cli'
 
 		'git' 'git-lfs' 'd2'
-		'astyle' 'stylua' 'shfmt'
-		'ruff' 'uv' 'yapf' 'pyright'
+		'stylua' 'shfmt'      # 'astyle'
+		'ruff' 'uv' 'pyright' # 'yapf'
 		'buf' 'biome'
-		'uncrustify' 'prettier'
-		'upx' 'ccache'
+		# 'uncrustify' 'prettier'
+		# 'upx' 'ccache'
 
 		#'doctest' 'spdlog' 'hdf5-openmpi'
 		'flatbuffers' 'protobuf'
@@ -64,7 +66,7 @@ package_gskd-dev() {
 		'python-python-socks' 'python-socksio' 'python-pysocks'
 		'python-debugpy' 'python-coverage'
 
-		'deno' 'yarn' 'sassc'
+		# 'deno' 'yarn' 'sassc'
 	)
 }
 
