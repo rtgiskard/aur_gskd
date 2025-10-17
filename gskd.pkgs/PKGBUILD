@@ -45,7 +45,7 @@ package_gskd-dev() {
 		'meson' 'make' 'pkgconf' 'patch' 'patchelf'
 		'gettext' 'bison' 'flex' 'automake' 'cmake' 'debugedit'
 		'binutils' 'pahole' 'fakeroot' 'file' 'which'
-		'perf' 'bpftrace' 'bcc-tools'
+		'perf' 'bpftrace' # 'bcc-libbpf-tools'
 		'tree-sitter-cli'
 
 		'git' 'git-lfs' 'd2'
@@ -86,6 +86,7 @@ package_gskd-tool() {
 
 		'sysstat' 'procps-ng' 'lsof' 'wev' # 'xorg-xauth'
 		'iputils' 'socat' 'tcpdump' 'mtr' 'iperf3'
+		'rustscan'
 
 		'curl' 'wget' 'aria2'
 		'libisoburn' 'cdrtools'
@@ -116,7 +117,8 @@ package_gskd-serv() {
 		'libvirt' 'qemu-base' 'qemu-user-static-binfmt'
 		'podman' 'docker-compose'
 		'containerd' 'nerdctl'
-		'kubectl' 'helm' 'k9s' 'crictl' 'kompose'
+
+		'kubectl' 'krew' 'helm' 'k9s' 'crictl' 'kompose'
 
 		'openssh' 'rsync'
 		'nbd'
@@ -203,6 +205,7 @@ package_gskd-apps() {
 		'flac' 'mac' 'lame' 'opus-tools' 'vorbis-tools' 'wavpack'
 		'mkvtoolnix-gui' 'mediainfo' 'easytag'
 
+		'zed'
 		'graphviz' 'fontforge'
 		'glade' #'gnome-builder'
 		'virt-manager' 'remmina'
