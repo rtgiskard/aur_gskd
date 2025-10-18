@@ -20,8 +20,8 @@ package_gskd-sys() {
 		# sel:
 		'mkinitcpio'
 
-		'linux-gskd' 'linux-gskd-headers'
-		#'linux' 'linux-headers'
+		# 'linux-gskd' 'linux-gskd-headers'
+		'linux' 'linux-headers'
 		'linux-firmware'
 		'grub' 'efibootmgr' 'systemd'
 
