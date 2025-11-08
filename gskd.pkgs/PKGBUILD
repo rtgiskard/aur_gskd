@@ -42,6 +42,7 @@ package_gskd-dev() {
 		'rust' 'rust-analyzer' 'rust-src'
 		# 'zig' 'vala'
 
+		'mold' 'ccache'
 		'meson' 'make' 'pkgconf' 'patch' 'patchelf'
 		'gettext' 'bison' 'flex' 'automake' 'cmake' 'debugedit'
 		'binutils' 'pahole' 'fakeroot' 'file' 'which'
@@ -53,7 +54,7 @@ package_gskd-dev() {
 		'ruff' 'uv' 'pyright' # 'yapf'
 		'buf' 'biome'
 		# 'uncrustify' 'prettier'
-		# 'upx' 'ccache'
+		# 'upx'
 
 		#'doctest' 'spdlog' 'hdf5-openmpi'
 		'flatbuffers' 'protobuf'
