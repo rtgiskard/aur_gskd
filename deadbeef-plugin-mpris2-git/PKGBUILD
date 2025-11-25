@@ -1,0 +1,35 @@
+# Maintainer: Peter Lamby <peterlamby@web.de>
+pkgname=deadbeef-plugin-mpris2-git
+pkgver=r178.1c89af4
+pkgrel=1
+pkgdesc="MPRISv2 plugin for the DeaDBeeF music player"
+url="https://github.com/DeaDBeeF-Player/deadbeef-mpris2-plugin"
+arch=('x86_64')
+license=('GPL2')
+depends=('glib2' 'deadbeef')
+makedepends=('git' 'autoconf' 'deadbeef')
+conflicts=('deadbeef-mpris-plugin')
+options=('!libtool')
+
+_gitname=deadbeef-mpris2-plugin
+_gitroot=https://github.com/DeaDBeeF-Player/${_gitname}
+
+source=("git+${_gitroot}")
+sha512sums=('SKIP')
+
+pkgver() {
+	cd "${srcdir}/${_gitname}"
+	printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
+}
+
+build() {
+	cd "${_gitname}"
+
+	autoreconf --install
+	./configure --prefix=/usr
+	make
+}
+
+package() {
+	make -C ${srcdir}/${_gitname} DESTDIR="${pkgdir}" install
+}
