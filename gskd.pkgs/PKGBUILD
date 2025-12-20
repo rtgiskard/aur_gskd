@@ -7,7 +7,7 @@ pkgname=(
 )
 pkgbase=gskd
 pkgver=0.2
-pkgrel=16
+pkgrel=17
 epoch=
 pkgdesc="giskard's package set"
 arch=('any')
@@ -122,11 +122,12 @@ package_gskd-serv() {
 		'kubectl' 'krew' 'helm' 'k9s' 'crictl' 'kompose'
 
 		'openssh' 'rsync'
-		'nbd'
+		'seaweedfs'
 		#'open-iscsi'
+		'nbd'
 
 		'nginx'
-		#'samba' 'atftp'
+		#'atftp'
 
 		# 'headscale'
 		'tailscale'
@@ -163,7 +164,7 @@ package_gskd-desk() {
 		# for old gtk apps
 		'gnome-themes-extra'
 
-		'waybar' 'swaync-git'
+		'waybar' 'swaync'
 
 		'satty' 'fuzzel'
 		'playerctl' 'brightnessctl'
