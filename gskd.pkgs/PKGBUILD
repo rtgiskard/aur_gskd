@@ -156,7 +156,7 @@ package_gskd-desk() {
 		# 'hyprpaper-git' 'hypridle-git'
 		# 'hyprland' 'hyprpolkitagent' 'hyprpicker'
 
-		'hypridle' 'hyprlock' 'hyprpaper'
+		'hypridle' 'hyprlock'
 
 		# 'xdg-desktop-portal-hyprland'
 		'xdg-desktop-portal-gtk'
@@ -164,7 +164,7 @@ package_gskd-desk() {
 		# for old gtk apps
 		'gnome-themes-extra'
 
-		'waybar' 'swaync'
+		'waybar' 'swaync' 'swaybg'
 
 		'satty' 'fuzzel'
 		'playerctl' 'brightnessctl'
