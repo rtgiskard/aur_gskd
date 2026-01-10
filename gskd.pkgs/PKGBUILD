@@ -299,7 +299,7 @@ package_gskd-aur() {
 		'deadbeef-plugin-quicksearch-gtk3-git'
 
 		'flacon'
-		'insomnia-bin'
+		# 'yaak-bin'
 
 		'clash-meta-alpha-git'
 	)
