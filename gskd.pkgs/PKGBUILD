@@ -121,7 +121,7 @@ package_gskd-serv() {
 
 		'kubectl' 'krew' 'helm' 'k9s' 'crictl' 'kompose'
 
-		'openssh' 'rsync'
+		'openssh' 'rsync' 'rclone'
 		'seaweedfs'
 		#'open-iscsi'
 		'nbd'
@@ -130,7 +130,7 @@ package_gskd-serv() {
 		#'atftp'
 
 		# 'headscale'
-		'tailscale'
+		# 'tailscale'
 		#'zerotier-one'
 	)
 }
@@ -302,6 +302,9 @@ package_gskd-aur() {
 		# 'yaak-bin'
 
 		'clash-meta-alpha-git'
+
+		'opencode'
+		'netbird'
 	)
 }
 
