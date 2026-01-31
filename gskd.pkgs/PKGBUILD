@@ -212,6 +212,7 @@ package_gskd-apps() {
 		'glade' #'gnome-builder'
 		'virt-manager' 'remmina'
 		'wireshark-qt' 'd-spy'
+		'lan-mouse'
 
 		'firefox' 'evolution'
 		'libreoffice-fresh' 'libreoffice-fresh-zh-cn'
@@ -299,13 +300,12 @@ package_gskd-aur() {
 		'deadbeef-plugin-quicksearch-gtk3-git'
 
 		'flacon'
-		# 'yaak-bin'
 
-		'clash-meta-alpha-git'
-
-		'opencode'
 		'netbird'
-		'lan-mouse-git'
+
+		# 'yaak-bin'
+		# 'mihomo-bin'
+		# 'opencode-bin'
 	)
 }
 
