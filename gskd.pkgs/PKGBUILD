@@ -206,13 +206,14 @@ package_gskd-apps() {
 		'inkscape' 'gimp' 'mpv' 'ffmpeg' #'cmus'
 		'flac' 'mac' 'lame' 'opus-tools' 'vorbis-tools' 'wavpack'
 		'mkvtoolnix-gui' 'mediainfo' 'easytag'
+		# 'sonic-visualiser'
 
 		'zed'
 		'graphviz' 'fontforge'
 		'glade' #'gnome-builder'
 		'virt-manager' 'remmina'
 		'wireshark-qt' 'd-spy'
-		'lan-mouse'
+		# 'lan-mouse'
 
 		'firefox' 'evolution'
 		'libreoffice-fresh' 'libreoffice-fresh-zh-cn'
