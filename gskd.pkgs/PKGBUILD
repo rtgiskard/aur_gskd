@@ -296,7 +296,6 @@ package_gskd-aur() {
 		'bibata-cursor-git'
 
 		'deadbeef-git'
-		'deadbeef-plugin-mpris2-git'
 		'deadbeef-plugin-spectrogram-gtk3-git'
 		'deadbeef-plugin-musical-spectrum-gtk3-git'
 		'deadbeef-plugin-quicksearch-gtk3-git'
