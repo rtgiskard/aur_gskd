@@ -47,7 +47,7 @@ package_gskd-dev() {
 		'gettext' 'bison' 'flex' 'automake' 'cmake' 'debugedit'
 		'binutils' 'pahole' 'fakeroot' 'file' 'which'
 		'perf' 'bpftrace' # 'bcc-libbpf-tools'
-		'tree-sitter-cli' 'tree-sitter-grammars'
+		'tree-sitter-cli' # 'tree-sitter-grammars'
 
 		'git' 'git-lfs' 'd2'
 		'stylua' 'shfmt'      # 'astyle'
