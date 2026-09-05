@@ -7,7 +7,7 @@ pkgname=(
 )
 pkgbase=gskd
 pkgver=0.2
-pkgrel=17
+pkgrel=20
 epoch=
 pkgdesc="giskard's package set"
 arch=('any')
@@ -140,7 +140,7 @@ package_gskd-desk() {
 		'wayland' 'wl-clipboard' 'wf-recorder' 'grim' 'slurp'
 		'pipewire' 'wireplumber' 'pipewire-jack' 'pipewire-pulse'
 
-		'seatd' 'greetd' 'greetd-tuigreet' # 'greetd-regreet-git' 'cage'
+		'seatd' 'greetd' # 'greetd-tuigreet' 'greetd-regreet-git' 'cage'
 		'networkmanager' 'nm-connection-editor'
 		'foot'
 
@@ -150,13 +150,13 @@ package_gskd-desk() {
 
 		# desktop: niri
 		'niri' 'xwayland-satellite'
+		'noctalia'
 
 		# desktop: hyprland (aur: hyprland, hyprlock, satty, ..)
 		# 'hyprland-git' 'hyprlock-git' 'hyprpicker-git'
 		# 'hyprpaper-git' 'hypridle-git'
 		# 'hyprland' 'hyprpolkitagent' 'hyprpicker'
-
-		'hypridle' 'hyprlock'
+		# 'hypridle' 'hyprlock'
 
 		# 'xdg-desktop-portal-hyprland'
 		'xdg-desktop-portal-gtk'
@@ -164,9 +164,9 @@ package_gskd-desk() {
 		# for old gtk apps
 		'gnome-themes-extra'
 
-		'waybar' 'swaync' 'swaybg'
+		# 'waybar' 'swaync' 'swaybg'
 
-		'satty' 'fuzzel'
+		'satty' # 'fuzzel'
 		'playerctl' 'brightnessctl'
 		'handlr-regex'
 
@@ -292,6 +292,7 @@ package_gskd-aur() {
 		'ttf-lxgw-wenkai'
 		'ttf-lxgw-neo-xihei'
 
+		'noctalia-greeter'
 		'bibata-cursor-git'
 
 		'deadbeef-git'
