@@ -30,7 +30,7 @@ package_gskd-sys() {
 		# 'nfs-utils' 'cifs-utils'
 		'squashfs-tools'
 
-		'bridge-utils' 'iproute2' 'nftables' 'iptables-nft'
+		'bridge-utils' 'iproute2' 'nftables'
 		# 'ipvsadm' 'ipset'
 	)
 }
