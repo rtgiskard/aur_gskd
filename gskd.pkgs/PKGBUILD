@@ -38,7 +38,7 @@ package_gskd-sys() {
 package_gskd-dev() {
 	depends=(
 		'gcc' 'llvm' 'gdb' 'lldb' 'valgrind'
-		'go' 'go-tools'
+		'go' 'go-tools' 'gopls'
 		'rust' 'rust-analyzer' 'rust-src'
 		# 'zig' 'vala'
 
@@ -50,15 +50,15 @@ package_gskd-dev() {
 		'tree-sitter-cli' # 'tree-sitter-grammars'
 
 		'git' 'git-lfs' 'd2'
-		'stylua' 'shfmt'      # 'astyle'
-		'ruff' 'uv' 'pyright' # 'yapf'
+		'stylua' 'shfmt' # 'astyle'
+		'ruff' 'uv'      # 'pyright' 'yapf'
 		'buf' 'biome'
-		# 'uncrustify' 'prettier'
-		# 'upx'
+		#'uncrustify' 'prettier'
+		#'upx'
 
 		#'doctest' 'spdlog' 'hdf5-openmpi'
-		'flatbuffers' 'protobuf'
-		'go-swagger' 'ali'
+		#'flatbuffers' 'protobuf'
+		#'go-swagger' 'ali'
 
 		'ipython' 'python-hatchling' 'python-pytest'
 		'python-numpy' # 'python-pandas' 'python-h5py-openmpi'
@@ -122,16 +122,17 @@ package_gskd-serv() {
 		'kubectl' 'krew' 'helm' 'k9s' 'crictl' 'kompose'
 
 		'openssh' 'rsync' 'rclone'
-		'seaweedfs'
+		#'seaweedfs'
 		#'open-iscsi'
 		'nbd'
 
 		'nginx'
 		#'atftp'
 
+		'sing-box'
 		# 'headscale'
 		# 'tailscale'
-		#'zerotier-one'
+		# 'zerotier-one'
 	)
 }
 
@@ -166,7 +167,7 @@ package_gskd-desk() {
 
 		# 'waybar' 'swaync' 'swaybg'
 
-		'satty' # 'fuzzel'
+		# 'satty' 'fuzzel'
 		'playerctl' 'brightnessctl'
 		'handlr-regex'
 
@@ -206,14 +207,15 @@ package_gskd-apps() {
 		'inkscape' 'gimp' 'mpv' 'ffmpeg' #'cmus'
 		'flac' 'mac' 'lame' 'opus-tools' 'vorbis-tools' 'wavpack'
 		'mkvtoolnix-gui' 'mediainfo' 'easytag'
-		# 'sonic-visualiser'
+		# 'sonic-visualiser' 'fontforge'
 
 		'zed'
-		'graphviz' 'fontforge'
-		'glade' #'gnome-builder'
+		'graphviz'
+		#'glade' 'gnome-builder'
 		'virt-manager' 'remmina'
 		'wireshark-qt' 'd-spy'
 		# 'lan-mouse'
+		# 'moserial'
 
 		'firefox' 'evolution'
 		'libreoffice-fresh' 'libreoffice-fresh-zh-cn'
@@ -304,6 +306,7 @@ package_gskd-aur() {
 
 		'netbird'
 
+		'go-yq'
 		# 'yaak-bin'
 		# 'mihomo-bin'
 		# 'opencode-bin'
