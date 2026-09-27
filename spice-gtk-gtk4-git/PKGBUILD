@@ -1,0 +1,62 @@
+pkgname=spice-gtk-gtk4-git
+pkgver=0.43.r23.g8225ad0d
+pkgrel=1
+pkgdesc='SPICE GTK 4 client library from the gtk4 branch'
+arch=('x86_64')
+url='https://github.com/rtgiskard/spice-gtk'
+license=('LGPL-2.1-only')
+depends=(
+  acl cairo gdk-pixbuf2 glib2 gst-plugin-gtk4 gst-plugins-base gst-plugins-good gstreamer
+  'gtk4>=4.14' json-glib libcacard libcap libcap-ng libepoxy libjpeg-turbo
+  libsasl libsoup3 libusb libx11 lz4 openssl opus phodav pixman polkit
+  spice-protocol usbredir wayland zlib
+)
+makedepends=(git glib2-devel gobject-introspection meson pkgconf python-pyparsing wayland-protocols)
+provides=("spice-gtk=${pkgver}" "spice-gtk4=${pkgver}" "spice-glib=${pkgver}")
+conflicts=(spice-gtk spice-glib spice-gtk3)
+install="${pkgname}.install"
+source=(
+  'spice-gtk::git+https://github.com/rtgiskard/spice-gtk.git#branch=gtk4'
+  'spice-common::git+https://gitlab.freedesktop.org/spice/spice-common.git'
+  'keycodemapdb::git+https://gitlab.com/keycodemap/keycodemapdb.git'
+)
+b2sums=('SKIP' 'SKIP' 'SKIP')
+
+prepare() {
+  cd "$srcdir/spice-gtk"
+  git submodule init
+  git config submodule.spice-common.url "$srcdir/spice-common"
+  git config submodule.keycodemapdb.url "$srcdir/keycodemapdb"
+  # The parent gitlinks, not the moving submodule HEADs, select the build inputs.
+  git -c protocol.file.allow=always submodule update
+}
+
+pkgver() {
+  cd "$srcdir/spice-gtk"
+  git describe --long --tags --match 'v[0-9]*' | sed -E 's/^v//; s/-([0-9]+)-g([0-9a-f]+)$/.r\1.g\2/'
+}
+
+build() {
+  meson setup build "$srcdir/spice-gtk" \
+    --prefix=/usr \
+    --libdir=lib \
+    --buildtype=plain \
+    -Dintrospection=enabled \
+    -Dgtk_doc=disabled \
+    -Dvapi=disabled \
+    -Dwayland-protocols=enabled \
+    -Dwebdav=enabled \
+    -Dusbredir=enabled \
+    -Dlibcap-ng=enabled \
+    -Dpolkit=enabled \
+    -Dsmartcard=enabled \
+    -Dsasl=enabled \
+    -Dopus=enabled \
+    -Dlz4=enabled \
+    -Degl=enabled
+  meson compile -C build
+}
+
+package() {
+  DESTDIR="$pkgdir" meson install -C build
+}

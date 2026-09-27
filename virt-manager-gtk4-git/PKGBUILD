@@ -1,0 +1,38 @@
+pkgname=virt-manager-gtk4-git
+pkgver=5.1.0.r9031.g680b2fd0
+pkgrel=1
+pkgdesc='GTK 4 Virtual Machine Manager with native SPICE display'
+arch=('any')
+url='https://github.com/rtgiskard/virt-manager'
+license=('GPL-2.0-or-later')
+depends=(
+  cpio dconf gtk4 libisoburn libosinfo libvirt-glib libvirt-python
+  python-cairo python-gobject python-requests spice-gtk4 vte4
+)
+makedepends=(git gettext meson python-docutils)
+optdepends=('gtksourceview5: GTK 4 XML syntax highlighting')
+provides=("virt-manager=${pkgver%%.r*}" "virt-install=${pkgver%%.r*}")
+conflicts=(virt-manager virt-install)
+source=('virt-manager::git+https://github.com/rtgiskard/virt-manager.git#branch=gtk4')
+b2sums=('SKIP')
+
+pkgver() {
+  cd "$srcdir/virt-manager"
+  printf '5.1.0.r%s.g%s' "$(git rev-list --count HEAD)" "$(git rev-parse --short=8 HEAD)"
+}
+
+build() {
+  meson setup build "$srcdir/virt-manager" \
+    --prefix=/usr \
+    --buildtype=plain \
+    -Dupdate-icon-cache=false \
+    -Dcompile-schemas=false \
+    -Dtests=disabled
+  meson compile -C build
+}
+
+package() {
+  DESTDIR="$pkgdir" meson install -C build
+
+  install -Dm644 "$srcdir/virt-manager/COPYING" "$pkgdir/usr/share/licenses/$pkgname/COPYING"
+}
