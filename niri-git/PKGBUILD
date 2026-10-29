@@ -1,0 +1,57 @@
+# Tracks rtgiskard/niri dev; provides niri for gskd-desk without changing its dependencies.
+_pkgname=niri
+pkgname=niri-git
+pkgver=26.04.r240.c024485b
+pkgrel=1
+pkgdesc='A scrollable-tiling Wayland compositor (rtgiskard fork)'
+arch=('x86_64' 'aarch64')
+url="https://github.com/rtgiskard/${_pkgname}"
+license=('GPL-3.0-or-later')
+depends=('cairo' 'glib2' 'glibc' 'libdisplay-info' 'libgcc' 'libinput' 'libpipewire' 'libxkbcommon' 'mesa' 'pango' 'pixman' 'seatd' 'systemd-libs' 'wayland' 'xdg-desktop-portal-impl')
+makedepends=('git' 'rust>=1.87' 'clang' 'pkgconf')
+optdepends=(
+	'bash: for the niri-session script'
+	'xwayland-satellite: for running X11 applications'
+	'xdg-desktop-portal-gnome: for screencasting'
+	'xdg-desktop-portal-gtk: fallback desktop portal'
+	'org.freedesktop.secrets: for the secrets portal'
+	'alacritty: terminal in the default configuration'
+	'fuzzel: application launcher in the default configuration'
+	'swaylock: screen locker in the default configuration'
+)
+provides=("${_pkgname}" 'wayland-compositor')
+conflicts=("${_pkgname}")
+options=('!lto')
+source=("git+https://github.com/rtgiskard/${_pkgname}.git#branch=dev")
+b2sums=('SKIP')
+
+pkgver() {
+	git -C "${_pkgname}" describe --long --tags | sed 's/^v//;s/\([^-]*-\)g/r\1/;s/-/./g'
+}
+
+prepare() {
+	cd "${_pkgname}"
+	cargo fetch --locked
+}
+
+build() {
+	cd "${_pkgname}"
+	cargo build --frozen --release -p niri --target-dir .cache/target
+	.cache/target/release/niri completions bash > niri.bash
+	.cache/target/release/niri completions zsh > _niri
+	.cache/target/release/niri completions fish > niri.fish
+}
+
+package() {
+	cd "${_pkgname}"
+	install -Dm755 .cache/target/release/niri "$pkgdir/usr/bin/niri"
+	install -Dm755 resources/niri-session "$pkgdir/usr/bin/niri-session"
+	install -Dm644 resources/niri.desktop "$pkgdir/usr/share/wayland-sessions/niri.desktop"
+	install -Dm644 resources/niri-portals.conf "$pkgdir/usr/share/xdg-desktop-portal/niri-portals.conf"
+	install -Dm644 resources/niri.service "$pkgdir/usr/lib/systemd/user/niri.service"
+	install -Dm644 resources/niri-shutdown.target "$pkgdir/usr/lib/systemd/user/niri-shutdown.target"
+	install -Dm644 resources/default-config.kdl "$pkgdir/usr/share/doc/niri/default-config.kdl"
+	install -Dm644 niri.bash "$pkgdir/usr/share/bash-completion/completions/niri"
+	install -Dm644 _niri "$pkgdir/usr/share/zsh/site-functions/_niri"
+	install -Dm644 niri.fish "$pkgdir/usr/share/fish/vendor_completions.d/niri.fish"
+}
