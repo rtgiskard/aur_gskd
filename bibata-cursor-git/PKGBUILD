@@ -1,13 +1,13 @@
 _pkgname=bibata_cursor
 pkgname=bibata-cursor-git
-pkgver=1.0.0.r0.f4ccfe8
+pkgver=1.1.0.r0.f4a7eda
 pkgrel=1
-pkgdesc='Bibata Cursor Themes, including hyprcursor and Xcursor'
+pkgdesc='Bibata scalable SVG cursor themes'
 arch=('any')
 url="https://github.com/rtgiskard/${_pkgname}"
 license=('GPL-3.0-or-later')
 conflicts=('bibata-cursor-theme')
-makedepends=('git' 'librsvg' 'python' 'xorg-xcursorgen')
+makedepends=('git' 'python')
 options=('!strip')
 source=("git+https://github.com/rtgiskard/${_pkgname}.git")
 b2sums=('SKIP')
@@ -18,7 +18,7 @@ pkgver() {
 
 build() {
 	cd ${_pkgname}
-	./src/cursor_utils.py --hypr --x11 --x11-symlink adwaita --out-dir out
+	./src/cursor_utils.py --svg --out-dir out
 }
 
 package() {
