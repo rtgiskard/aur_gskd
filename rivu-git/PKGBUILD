@@ -1,6 +1,6 @@
 _pkgname=rivu
 pkgname=rivu-git
-pkgver=0.2.2.r1.287f4ae
+pkgver=0.2.8.r0.d1ea1cb
 pkgrel=1
 pkgdesc='a lightweight, local-first Linux music player'
 arch=('x86_64' 'aarch64')

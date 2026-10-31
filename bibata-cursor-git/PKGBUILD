@@ -1,6 +1,6 @@
 _pkgname=bibata_cursor
 pkgname=bibata-cursor-git
-pkgver=1.1.0.r0.f4a7eda
+pkgver=1.1.0.r2.8c4c0f5
 pkgrel=1
 pkgdesc='Bibata scalable SVG cursor themes'
 arch=('any')

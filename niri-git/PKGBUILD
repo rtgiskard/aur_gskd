@@ -1,7 +1,7 @@
 # Tracks rtgiskard/niri dev; provides niri for gskd-desk without changing its dependencies.
 _pkgname=niri
 pkgname=niri-git
-pkgver=26.04.r240.c024485b
+pkgver=26.04.r251.70e46adc
 pkgrel=1
 pkgdesc='A scrollable-tiling Wayland compositor (rtgiskard fork)'
 arch=('x86_64' 'aarch64')
