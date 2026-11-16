@@ -1,7 +1,7 @@
 # Tracks rtgiskard/niri dev; provides niri for gskd-desk without changing its dependencies.
 _pkgname=niri
 pkgname=niri-git
-pkgver=26.04.r251.70e46adc
+pkgver=26.04.r303.f489a90c
 pkgrel=1
 pkgdesc='A scrollable-tiling Wayland compositor (rtgiskard fork)'
 arch=('x86_64' 'aarch64')
@@ -36,6 +36,7 @@ prepare() {
 
 build() {
 	cd "${_pkgname}"
+	export RUSTFLAGS="${RUSTFLAGS:-} --remap-path-prefix=${srcdir}=/dbg"
 	cargo build --frozen --release -p niri --target-dir .cache/target
 	.cache/target/release/niri completions bash > niri.bash
 	.cache/target/release/niri completions zsh > _niri
